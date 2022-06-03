@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+
+<section>
+    <!-- image header -->
+    <div class="row">
+        <div class="col-md-12">
+            <img class="w-100 img-size" src="https://www.itprotoday.com/sites/itprotoday.com/files/styles/article_featured_retina/public/Programmer%20writing%20code%20looking%20at%20monitors.jpg?itok=KxjIPmaP" alt="">
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2 class="mt-4">Ariticle</h2>
+    
+        <div class="row">
+            <div *ngFor="let article of lstArticle" class="col-md-4">
+                <div class="card border-dark mb-3" >
+              
+                    <img class="card-img-top" [src]="article.img_url" alt="Card image cap">
+    
+                    <div class="card-body text-dark">
+                      <h5 class="card-title">{{article.title}}</h5>
+                      <p class="card-text">{{article.subTitle}}</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-success">
+                        {{article.created_at}}
+                    </div>
+    
+                  </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+<app-footer></app-footer>

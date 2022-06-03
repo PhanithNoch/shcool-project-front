@@ -1,0 +1,32 @@
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 *ngIf="isUpdate">Update Post</h2>
+            <h2 *ngIf="!isUpdate">Create Post</h2>
+        </div>
+    </div>
+</section>
+
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Title</label>
+      <input  [(ngModel)]="post.title"  name="title" ngDefaultControl type="text" class="form-control" id="inputEmail4">
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Image url</label>
+        <input name="image_url" ngDefaultControl [(ngModel)]="post.image_url" type="text" class="form-control" id="inputPassword4">
+      </div>
+  
+    <div class="col-md-12">
+      <label for="inputPassword4" class="form-label">Body</label>
+      <textarea name="body" ngDefaultControl [(ngModel)]="post.body" class="form-control" id="inputPassword4" cols="30" rows="10"></textarea>
+      <!-- <textarea type="password"> -->
+    </div>
+
+
+    <div class="col-12">
+      <button *ngIf="!isUpdate" (click)="createPost()" type="button" class="btn btn-primary mt-2">Save</button>
+      <button *ngIf="isUpdate" (click)="updatePost()" type="button" class="btn btn-primary mt-2">Save</button>
+    </div>
+ 
