@@ -1,792 +1,806 @@
 
+<div class="row">
+  <div class="col-md-6">
 
 <h2 class="text-center">ព័ត៌មាន  និងទិន្នយ័ផ្ទាល់ខ្លួន</h2>
-<div class="container-md mt-3">
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>
 
-   <div class="row">
-      <div class="col-6">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <div class="row">
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary btn-sm">Save</button>
 
-          <label for="exampleInputEmail1">គោត្តនាម​-​នាមសិស្ស</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="គោត្តនាម​-​នាមសិស្ស">
-      
-      </div>
-      <div class="col-6">
-   
-          <label for="exampleInputEmail1">ឈ្មោះហៅក្រៅ</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះហៅក្រៅ">
-
-      </div>
-   </div>
-   <div class="row">
+    </div>
+  </div>
+  <div class="row">
     <div class="col-6">
-  
-        <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
+
+        <label for="exampleInputEmail1">គោត្តនាម​-​នាមសិស្ស</label>
+        <input name="fullname" [(ngModel)]="student.fullname" required #fullname="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="គោត្តនាម​-​នាមសិស្ស">
     
     </div>
     <div class="col-6">
-
-        <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
-    
-    </div>
-   </div>
-   <div class="row">
-    <div class="col-3">
-   
-        <label for="exampleInputEmail1">ទំងន់</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំងន់">
-     
-    </div>
-    <div class="col-3">
-
-        <label for="exampleInputEmail1">កំពស់</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កំពស់">
  
+        <label for="exampleInputEmail1">ឈ្មោះហៅក្រៅ</label>
+        <input name="nickname" ngModel [(ngModel)]="student.nickname"   #nickname="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះហៅក្រៅ">
+
     </div>
-    <div class="col-3">
+ </div>
+ <div class="row">
+  <div class="col-6">
+
+      <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
+      <input name="address" ngModel  #address="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
+  
+  </div>
+  <div class="col-6">
+
+      <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
+      <input name="phone" ngModel  #phone="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
+  
+  </div>
+ </div>
+ <div class="row">
+  <div class="col-3">
+ 
+      <label for="exampleInputEmail1">ទំងន់</label>
+      <input  name="weight" ngModel  #weight="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំងន់">
    
-        <label for="exampleInputEmail1">ថ្ងៃខែឆ្នាំកំណើត</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ថ្ងៃខែឆ្នាំកំណើត">
+  </div>
+  <div class="col-3">
+
+      <label for="exampleInputEmail1">កំពស់</label>
+      <input name="height" ngModel  #height="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កំពស់">
+
+  </div>
+  <div class="col-3">
+ 
+      <label for="exampleInputEmail1">ថ្ងៃខែឆ្នាំកំណើត</label>
+      <input  name="dob" ngModel  #dob="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ថ្ងៃខែឆ្នាំកំណើត">
+ 
+  </div>
+  <div class="col-3">
    
+      <label for="exampleInputEmail1">អាយុ</label>
+      <input name="age" ngModel  #age="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាយុ">
+   
+  </div>
+ </div>
+ <div class="row">
+   <div class="col-6">
+    <div class="form-check form-check-inline">
+      <label class="form-check-label" for="inlineRadio1">ភេទ</label>
     </div>
-    <div class="col-3">
-     
+     <div class="form-check form-check-inline">
+      <input   ngModel required class="form-check-input" type="radio" name="sex" id="female"  value="ស្រី">
+      <label class="form-check-label" for="inlineRadio1">ស្រី</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input   class="form-check-input" type="radio" name="sex" id="male" value="ប្រុស" ngModel required >
+      <label class="form-check-label" for="inlineRadio2">ប្រុស</label>
+    </div>
+   </div>
+ </div>
+ <div class="row">
+  <div class="col-6">
+
+      <label for="exampleInputEmail1">ទីកន្លែងកំណើត</label>
+      <input name="place_of_birth" ngModel  #place_of_birth="ngModel"    type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទីកន្លែងកំណើត">
+   
+  </div>
+  <div class="col-3">
+  
+      <label for="exampleInputEmail1">លេខអត្តសញ្ញណបណ្ណ័</label>
+      <input name="id_number" ngModel  #id_number="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខអត្តសញ្ញណបណ្ណ័">
+  </div>
+  <div class="col-3">
+ 
+      <label for="exampleInputEmail1">កាលបរិច្ឆេទផុតកំណត់</label>
+      <input name="expired_date" ngModel  #expired_date="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទផុតកំណត់">
+  
+  </div>
+ </div>
+ <div class="row">
+  <div class="col-6">
+  
+      <label for="exampleInputEmail1">ឪពុកឈ្មោះ</label>
+      <input name="father_name" ngModel  #father_name="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឪពុកឈ្មោះ">
+ 
+  </div>
+    <div class="col-2">
+   
+        <label for="exampleInputEmail1">ត្រកូល</label>
+        <input name="father_firstname" ngModel  #father_firstname="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ត្រកូល">
+  
+    </div>
+    <div class="col-2">
+   
         <label for="exampleInputEmail1">អាយុ</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាយុ">
-     
-    </div>
-   </div>
-   <div class="row">
-     <div class="col-6">
-      <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineRadio1">ភេទ</label>
-      </div>
-       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        <label class="form-check-label" for="inlineRadio1">ស្រី</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-        <label class="form-check-label" for="inlineRadio2">ប្រុស</label>
-      </div>
-     </div>
-   </div>
-   <div class="row">
-    <div class="col-6">
-  
-        <label for="exampleInputEmail1">ទីកន្លែងកំណើត</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទីកន្លែងកំណើត">
-     
-    </div>
-    <div class="col-3">
-    
-        <label for="exampleInputEmail1">លេខអត្តសញ្ញណបណ្ណ័</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខអត្តសញ្ញណបណ្ណ័">
-    </div>
-    <div class="col-3">
-   
-        <label for="exampleInputEmail1">កាលបរិច្ឆេទផុតកំណត់</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទផុតកំណត់">
-    
-    </div>
-   </div>
-   <div class="row">
-    <div class="col-6">
-    
-        <label for="exampleInputEmail1">ឪពុកឈ្មោះ</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឪពុកឈ្មោះ">
-   
-    </div>
-      <div class="col-2">
-     
-          <label for="exampleInputEmail1">ត្រកូល</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ត្រកូល">
-    
-      </div>
-      <div class="col-2">
-     
-          <label for="exampleInputEmail1">អាយុ</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាយុ">
-     
-      </div>
-      <div class="col-2">
-       
-          <label for="exampleInputEmail1">មុខរបរ</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="មុខរបរ">
-      
-      </div>
-   </div>
-   <div class="row">
-    <div class="col-6">
-  
-        <label for="exampleInputEmail1">ម្ដាយឈ្មោះ</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ម្ដាយឈ្មោះ">
- 
-    </div>
-      <div class="col-2">
-      
-          <label for="exampleInputEmail1">ត្រកូល</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ត្រកូល">
-        
-      </div>
-      <div class="col-2">
-      
-          <label for="exampleInputEmail1">អាយុ</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាយុ">
-       
-      </div>
-      <div class="col-2">
-   
-          <label for="exampleInputEmail1">មុខរបរ</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="មុខរបរ">
-     
-      </div>
-   </div>
-  
-  
-  
-  
-   <div class="row">
-    <div class="col-6">
-   
-        <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
-    
-    </div>
-      <div class="col-3">
-   
-          <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
-       
-      </div>
-      <div class="col-3">
-   
-          <label for="exampleInputEmail1">ទំនាក់ទំនងត្រូវជា</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំនាក់ទំនងត្រូវជា">
-   
-      </div>
-      <div class="col-6">
-   
-          <label for="exampleInputEmail1">ចំពោះករណីបន្ទាន់</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ចំពោះករណីបន្ទាន់">
-    
-      </div>
-      <div class="col-6">
-     
-          <label for="exampleInputEmail1">លេខទូរសព្ទ័ទំនាក់ទំនង</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័ទំនាក់ទំនង">
-  
-      </div>
-      <div class="col-6">
-     
-          <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
-    
-      <div class="col-6">
-  
-          <label for="exampleInputEmail1">ទំនាក់ទំនងត្រូវជា</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំនាក់ទំនងត្រូវជា">
-  
-      </div>
-      ១. អ្នកដែលបញ្ចូល ឬណែនាំមកអង្គការធីន ឆាឡេន
-      
-   </div>
-   <div class="row">
-    <div class="col-6">
-   
-        <label for="exampleInputEmail1">ឈ្មោះ</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
+        <input name="father_age" ngModel  #father_age="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាយុ">
    
     </div>
     <div class="col-2">
-
-        <label for="exampleInputEmail1">ត្រកូល</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
-
+     
+        <label for="exampleInputEmail1">មុខរបរ</label>
+        <input name="father_job" ngModel  #father_job="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="មុខរបរ">
+    
     </div>
-    <div class="col-4">
-   
-        <label for="exampleInputEmail1">ឈ្មោះហៅក្រៅ</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះហៅក្រៅ">
-   
-    </div>
+ </div>
+ <div class="row">
+  <div class="col-6">
+
+      <label for="exampleInputEmail1">ម្ដាយឈ្មោះ</label>
+      <input  name="mother_name" ngModel  #mother_name="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ម្ដាយឈ្មោះ">
+
   </div>
-  <div class="row">
+    <div class="col-2">
+    
+        <label for="exampleInputEmail1">ត្រកូល</label>
+        <input  name="mother_firstname" ngModel  #mother_firstname="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ត្រកូល">
+      
+    </div>
+    <div class="col-2">
+    
+        <label for="exampleInputEmail1">អាយុ</label>
+        <input name="mother_age" ngModel  #mother_age="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាយុ">
+     
+    </div>
+    <div class="col-2">
+ 
+        <label for="exampleInputEmail1">មុខរបរ</label>
+        <input name="mother_job" ngModel  #mother_job="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="មុខរបរ">
+   
+    </div>
+ </div>
+
+
+
+
+ <div class="row">
+  <div class="col-6">
+ 
+      <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
+      <input name="parent_address" ngModel  #parent_address="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
+  
+  </div>
+    <div class="col-3">
+ 
+        <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
+        <input name="parent_contact_phone" ngModel  #parent_contact_phone="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
+     
+    </div>
+    <div class="col-3">
+ 
+        <label for="exampleInputEmail1">ទំនាក់ទំនងត្រូវជា</label>
+        <input name="relatives_contact" ngModel  #relatives_contact="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំនាក់ទំនងត្រូវជា">
+ 
+    </div>
+    <div class="col-6">
+ 
+        <label for="exampleInputEmail1">ចំពោះករណីបន្ទាន់</label>
+        <input name="emergency" ngModel  #emergency="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ចំពោះករណីបន្ទាន់">
+  
+    </div>
+    <div class="col-6">
+   
+        <label for="exampleInputEmail1">លេខទូរសព្ទ័ទំនាក់ទំនង</label>
+        <input name="emergency_contact" ngModel  #emergency_contact="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័ទំនាក់ទំនង">
+
+    </div>
     <div class="col-6">
    
         <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
-    
-    </div>
-    <div class="col-3">
-   
-        <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
-    
-    </div>
-    <div class="col-3">
+        <input name="emergency_address" ngModel  #emergency_address="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
   
+    <div class="col-6">
+
         <label for="exampleInputEmail1">ទំនាក់ទំនងត្រូវជា</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំនាក់ទំនងត្រូវជា">
-   
+        <input name="relatives_emergency" ngModel  #relatives_emergency="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំនាក់ទំនងត្រូវជា">
+
     </div>
-  </div>
-  <div class="mt-4" style="text-decoration-line: underline">
-    ប្រវត្ដិទាក់ទងនឹងច្បាប់
-  </div>
-
-  <div class="mt-2">
-    <p>តើអ្នកជាមនុស្សដែលប្រឈមមុខនឹងបញ្ហាដូចខាងក្រោមនេះមែនទេ?  (សូមពិនិត្យមើលចំណុចខាងក្រោម)</p>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline1">មានដីកាចាប់ខ្លួន</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline2">កោះហៅពីតុលាការ</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline3">ឧក្រិដ្ឋជន</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline4">ការកាត់ទោស</label>
-  </div>
-
-    <label class="">សេចក្ដីពន្យល់ផ្សេងៗទៀត</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-
-
-    <label class="">ប្រសិនបើមានពាក់ព័ន្ធត្រូវនឹងបញ្ហាខាងលើនេះសូមពន្យល់</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-
-  <div class="mt-2">
-    <p>តើអ្នកធ្លាប់ជាប់ពន្ធនាគារដែរឬទេ</p>
-  </div>
-  <div class="row">
-    <div class="col-6">
-   
-        <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
-  
-    </div>
-    <div class="col-6">
-   
-        <label for="exampleInputEmail1">ស្ថាបន័</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ស្ថាបន័">
- 
-    </div>
-  </div>
-  <div class="mt-4" style="text-decoration-line: underline">
-    ស្ថានភាពសេដ្ឋកិច្ច 
-  </div>
-  <div class="mt-2">
-    <p>ប្រសិនបើអ្នកចូលរួមក្នុងកម្មវិធីរបស់ ធីន​ ឆាឡេន តើអ្នកណាឧបត្ថម្ភអ្វីចំពោះការចំណាយខាងក្រោមនេះ?</p>
-  </div>
-
-    <label class="">ថ្នាំព្យាបាល</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-
-
-    <label class="">សុខភាពមាត់ធ្មេញ</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-
-
-    <label class="">ផ្ទាល់ខ្លួន</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-
-  <div class="mt-2">
-    <p>តើអ្នកមានបានទទួលការឧបត្ថម្ភដូចខាងក្រោមនេះដែរឬទេ?</p>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline5" name="customRadioInline5" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline5">សុខមាលភាព</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline6" name="customRadioInline5" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline6">ជំនួយជនពិការ</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline7" name="customRadioInline5" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline7">ជនគ្មានការងារធ្វើ</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline8" name="customRadioInline5" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline8">ប្រាក់ចំណូលផ្សេងៗទៀត</label>
-  </div>
-
-    <p>តើអ្នកមានជំពាក់បំណុលនរណាម្នាក់ដែរឬទេ?</p>
-    <div class="custom-control custom-radio custom-control-inline">
-      <input type="radio" id="customRadioInline9" name="customRadioInline9" class="custom-control-input">
-      <label class="custom-control-label" for="customRadioInline9">បាទ/ចាស</label>
-    </div>
-    <div class="custom-control custom-radio custom-control-inline">
-      <input type="radio" id="customRadioInline10" name="customRadioInline9" class="custom-control-input">
-      <label class="custom-control-label" for="customRadioInline10">ទេ</label>
-    </div>
-
-  <div class="mt-4" style="text-decoration-line: underline">
-    ប្រវត្តិនៃការសិក្សាអប់រំ
-  </div>
-  <div class="mt-2">
-    <p>កំរិតសិក្សាខ្ពស់បំផុតដែលអ្នកបានរៀនចប់</p>
-  </div>
-  <div class="row">
-      <div class="col-4">
-
-          <label for="exampleInputEmail1">ថ្នាក់ទី</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ថ្នាក់ទី">
-
-      </div>
-      <div class="col-8">
- 
-          <label for="exampleInputEmail1">សកលវិទ្យាលយ័</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="សកលវិទ្យាលយ័">
+    ១. អ្នកដែលបញ្ចូល ឬណែនាំមកអង្គការធីន ឆាឡេន
     
-      </div>
+ </div>
+ <div class="row">
+  <div class="col-6">
+ 
+      <label for="exampleInputEmail1">ឈ្មោះ</label>
+      <input  name="suggester_name" ngModel  #suggester_name="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
+ 
   </div>
-  <div class="mt-2">
-    <p>តើបច្ចុប្បន្ននេះអ្នកមានក្នុងកម្មវិធីសិក្សាអប់រំណាមួយដែរឬទេ?</p>
+  <div class="col-2">
+
+      <label for="exampleInputEmail1">ត្រកូល</label>
+      <input name="suggester_firstname" ngModel  #suggester_firstname="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
+
+  </div>
+  <div class="col-4">
+ 
+      <label for="exampleInputEmail1">ឈ្មោះហៅក្រៅ</label>
+      <input name="suggester_nickname" ngModel  #suggester_nickname="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះហៅក្រៅ">
+ 
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+ 
+      <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
+      <input name="suggester_address" ngModel  #suggester_address="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
+  
+  </div>
+  <div class="col-3">
+ 
+      <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
+      <input  name="suggester_phone_number" ngModel  #suggester_phone_number="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
+  
+  </div>
+  <div class="col-3">
+
+      <label for="exampleInputEmail1">ទំនាក់ទំនងត្រូវជា</label>
+      <input name="suggester_phone_relatives" ngModel  #suggester_phone_relatives="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំនាក់ទំនងត្រូវជា">
+ 
+  </div>
+</div>
+<div class="mt-4" style="text-decoration-line: underline">
+  ប្រវត្ដិទាក់ទងនឹងច្បាប់
+</div>
+
+<div class="mt-2">
+  <p>តើអ្នកជាមនុស្សដែលប្រឈមមុខនឹងបញ្ហាដូចខាងក្រោមនេះមែនទេ?  (សូមពិនិត្យមើលចំណុចខាងក្រោម)</p>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" name="criminals_with" id="criminals_with" value="មានដីកាចាប់ខ្លួន" ngModel required>
+  <label class="custom-control-label" for="customRadioInline1">មានដីកាចាប់ខ្លួន</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline2" name="criminals_with" id="criminals_with" value="កោះហៅពីតុលាការ" ngModel required  class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline2">កោះហៅពីតុលាការ</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input"  name="criminals_with" id="criminals_with" value="ឧក្រិដ្ឋជន" ngModel required >
+  <label class="custom-control-label" for="customRadioInline3">ឧក្រិដ្ឋជន</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input" name="criminals_with" id="criminals_with" value="ការកាត់ទោស" ngModel required >
+  <label class="custom-control-label" for="customRadioInline4">ការកាត់ទោស</label>
+</div>
+
+  <label class="">សេចក្ដីពន្យល់ផ្សេងៗទៀត</label>
+  <textarea name="criminals_explanation" ngModel  #criminals_explanation="ngModel"  class="form-control" aria-label="With textarea"></textarea>
+
+
+  <label class="">ប្រសិនបើមានពាក់ព័ន្ធត្រូវនឹងបញ្ហាខាងលើនេះសូមពន្យល់</label>
+  <textarea name="criminals_if" ngModel  #criminals_if="ngModel"  class="form-control" aria-label="With textarea"></textarea>
+
+<div class="mt-2">
+  <p>តើអ្នកធ្លាប់ជាប់ពន្ធនាគារដែរឬទេ</p>
+</div>
+<div class="row">
+  <div class="col-6">
+ 
+      <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
+      <input name="criminals_date" ngModel  #criminals_date="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+
+  </div>
+  <div class="col-6">
+ 
+      <label for="exampleInputEmail1">ស្ថាបន័</label>
+      <input name="institution_criminals" ngModel  #institution_criminals="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ស្ថាបន័">
+
+  </div>
+</div>
+<div class="mt-4" style="text-decoration-line: underline">
+  ស្ថានភាពសេដ្ឋកិច្ច 
+</div>
+<div class="mt-2">
+  <p>ប្រសិនបើអ្នកចូលរួមក្នុងកម្មវិធីរបស់ ធីន​ ឆាឡេន តើអ្នកណាឧបត្ថម្ភអ្វីចំពោះការចំណាយខាងក្រោមនេះ?</p>
+</div>
+
+  <label class="">ថ្នាំព្យាបាល</label>
+  <textarea name="therapeutic_drugs" ngModel  #therapeutic_drugs="ngModel"  class="form-control" aria-label="With textarea"></textarea>
+
+
+  <label class="">សុខភាពមាត់ធ្មេញ</label>
+  <textarea name="oral_health" ngModel  #oral_health="ngModel" class="form-control" aria-label="With textarea"></textarea>
+
+
+  <label class="">ផ្ទាល់ខ្លួន</label>
+  <textarea name="personal_health" ngModel  #personal_health="ngModel" class="form-control" aria-label="With textarea"></textarea>
+
+<div class="mt-2">
+  <p>តើអ្នកមានបានទទួលការឧបត្ថម្ភដូចខាងក្រោមនេះដែរឬទេ?</p>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline5" name="customRadioInline5" class="custom-control-input" name="is_join_get_help" id="is_join_get_help" value="សុខមាលភាព" ngModel required>
+  <label class="custom-control-label" for="customRadioInline5">សុខមាលភាព</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline6" name="customRadioInline5" class="custom-control-input" name="is_join_get_help" id="is_join_get_help" value="ជំនួយជនពិការ" ngModel required>
+  <label class="custom-control-label" for="customRadioInline6">ជំនួយជនពិការ</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline7" name="customRadioInline5" class="custom-control-input" name="is_join_get_help" id="is_join_get_help" value="ជនគ្មានការងារធ្វើ" ngModel required>
+  <label class="custom-control-label" for="customRadioInline7">ជនគ្មានការងារធ្វើ</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline8" name="customRadioInline5" class="custom-control-input" name="is_join_get_help" id="is_join_get_help" value="ប្រាក់ចំណូលផ្សេងៗទៀត" ngModel required>
+  <label class="custom-control-label" for="customRadioInline8">ប្រាក់ចំណូលផ្សេងៗទៀត</label>
+</div>
+
+  <p>តើអ្នកមានជំពាក់បំណុលនរណាម្នាក់ដែរឬទេ?</p>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline9" name="customRadioInline9" class="custom-control-input" >
+    <label class="custom-control-label" for="customRadioInline9">បាទ/ចាស</label>
   </div>
   <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline11" name="customRadioInline11" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline11">បាទ/ចាស</label>
+    <input type="radio" id="customRadioInline10" name="customRadioInline9" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline10">ទេ</label>
   </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline12" name="customRadioInline11" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline12">ទេ</label>
-  </div>
-  <div class="mt-2">
-    <p>បើបាទ/ចាសសូមប្រាប់ឈ្មោះសាលា​ និងអាសយ័ដ្ឋាន</p>
-  </div>
-  <div class="row">
+
+<div class="mt-4" style="text-decoration-line: underline">
+  ប្រវត្តិនៃការសិក្សាអប់រំ
+</div>
+<div class="mt-2">
+  <p>កំរិតសិក្សាខ្ពស់បំផុតដែលអ្នកបានរៀនចប់</p>
+</div>
+<div class="row">
     <div class="col-4">
 
-        <label for="exampleInputEmail1">ឈ្មោះសាលា</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះសាលា">
- 
+        <label for="exampleInputEmail1">ថ្នាក់ទី</label>
+        <input name="grade" ngModel  #grade="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ថ្នាក់ទី">
+
     </div>
     <div class="col-8">
 
-        <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
-        <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
-
+        <label for="exampleInputEmail1">សកលវិទ្យាលយ័</label>
+        <input name="education_level" ngModel  #education_level="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="សកលវិទ្យាលយ័">
+  
     </div>
 </div>
 <div class="mt-2">
-  <p>ប្រសិនបើអ្នកបានឈប់ក្នុងកម្មវិធីសិក្សាអប់រំនោះ សូមពន្យល់ពីំមូលហេតុដែលអ្នកបានឈប់</p>
-</div>
-
-  <label class="">មូលហេតុ</label>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
-
-<div class="mt-2">
-  <p>តើកំពុងឬធ្លាប់បានទទួលការសិក្សាជំនាញដែរឬទេ?</p>
+  <p>តើបច្ចុប្បន្ននេះអ្នកមានក្នុងកម្មវិធីសិក្សាអប់រំណាមួយដែរឬទេ?</p>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline13" name="customRadioInline13" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline13">បាទ/ចាស</label>
+  <input  type="radio" id="customRadioInline11" name="customRadioInline11" class="custom-control-input" name="is_current_education" id="is_current_education" value="បាទ/ចាស" ngModel required>
+  <label class="custom-control-label" for="customRadioInline11">បាទ/ចាស</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline14" name="customRadioInline13" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline14">ទេ</label>
+  <input type="radio" id="customRadioInline12" name="customRadioInline11" class="custom-control-input" name="is_current_education" id="is_current_education" value="ទេ" ngModel required>
+  <label class="custom-control-label" for="customRadioInline12">ទេ</label>
 </div>
 <div class="mt-2">
-  <p>បើបាទ/ចាស​   សូមប្រាប់​</p>
+  <p>បើបាទ/ចាសសូមប្រាប់ឈ្មោះសាលា​ និងអាសយ័ដ្ឋាន</p>
 </div>
 <div class="row">
-  <div class="col-6">
- 
-      <label for="exampleInputEmail1">ប្រភេទមុខជំនាញ</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="មុខជំនាញ">
+  <div class="col-4">
+
+      <label for="exampleInputEmail1">ឈ្មោះសាលា</label>
+      <input name="school_name" ngModel  #school_name="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះសាលា">
 
   </div>
-  <div class="col-6">
+  <div class="col-8">
 
-      <label for="exampleInputEmail1">កាលបរិច្ឆេទវគ្គបណ្ដុះបណ្ដាល</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទវគ្គបណ្ដុះបណ្ដាល">
- 
+      <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
+      <input name="address_education" ngModel  #address_education="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
+
   </div>
 </div>
+<div class="mt-2">
+<p>ប្រសិនបើអ្នកបានឈប់ក្នុងកម្មវិធីសិក្សាអប់រំនោះ សូមពន្យល់ពីំមូលហេតុដែលអ្នកបានឈប់</p>
+</div>
 
-  <label class="">ករណីវិញ្ញាបន័បត្រ័បញ្ជាក់ការសិក្សា</label>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<label class="">មូលហេតុ</label>
+<textarea name="education_reason" ngModel  #education_reason="ngModel" class="form-control" aria-label="With textarea"></textarea>
 
 <div class="mt-2">
-  <p>តើអាចអានអក្សរបានដែរឬទេ?</p>
+<p>តើកំពុងឬធ្លាប់បានទទួលការសិក្សាជំនាញដែរឬទេ?</p>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline15" name="customRadioInline15" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline15">បាទ/ចាស</label>
+<input type="radio" id="customRadioInline13" name="customRadioInline13" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline13">បាទ/ចាស</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline16" name="customRadioInline15" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline16">ទេ</label>
-</div>
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline17" name="customRadioInline15" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline17">ល្អ</label>
-</div>
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline18" name="customRadioInline15" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline18">ល្មម</label>
-</div>
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline19" name="customRadioInline15" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline19">ខ្សោយ</label>
+<input type="radio" id="customRadioInline14" name="customRadioInline13" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline14">ទេ</label>
 </div>
 <div class="mt-2">
-  <p>តើអាចសរសេរអក្សរបានដែរឬទេ?</p>
+<p>បើបាទ/ចាស​   សូមប្រាប់​</p>
+</div>
+<div class="row">
+<div class="col-6">
+
+    <label for="exampleInputEmail1">ប្រភេទមុខជំនាញ</label>
+    <input name="skill" ngModel  #skill="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="មុខជំនាញ">
+
+</div>
+<div class="col-6">
+
+    <label for="exampleInputEmail1">កាលបរិច្ឆេទវគ្គបណ្ដុះបណ្ដាល</label>
+    <input name="skill_date_training" ngModel  #skill_date_training="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទវគ្គបណ្ដុះបណ្ដាល">
+
+</div>
+</div>
+
+<label class="">ករណីវិញ្ញាបន័បត្រ័បញ្ជាក់ការសិក្សា</label>
+<textarea name="skill_case_certificate" ngModel  #skill_case_certificate="ngModel"  class="form-control" aria-label="With textarea"></textarea>
+
+<div class="mt-2">
+<p>តើអាចអានអក្សរបានដែរឬទេ?</p>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline20" name="customRadioInline20" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline20">បាទ/ចាស</label>
+<input type="radio" id="customRadioInline15" name="customRadioInline15" class="custom-control-input" name="is_can_read" id="is_can_read" value="បាទ/ចាស" ngModel required>
+<label class="custom-control-label" for="customRadioInline15">បាទ/ចាស</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline21" name="customRadioInline20" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline21">ទេ</label>
+<input type="radio" id="customRadioInline16" name="customRadioInline15" class="custom-control-input" name="is_can_read" id="is_can_read" value="ទេ" ngModel required>
+<label class="custom-control-label" for="customRadioInline16">ទេ</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline22" name="customRadioInline20" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline22">ល្អ</label>
+<input type="radio" id="customRadioInline17" name="customRadioInline15" class="custom-control-input"  name="is_can_read" id="is_can_read" value="ល្អ" ngModel required>
+<label class="custom-control-label" for="customRadioInline17">ល្អ</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline23" name="customRadioInline20" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline23">ល្មម</label>
+<input type="radio" id="customRadioInline18" name="customRadioInline15" class="custom-control-input"  name="is_can_read" id="is_can_read" value="ល្មម" ngModel required>
+<label class="custom-control-label" for="customRadioInline18">ល្មម</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline24" name="customRadioInline15" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline24">ខ្សោយ</label>
+<input type="radio" id="customRadioInline19" name="customRadioInline15" class="custom-control-input" name="is_can_read" id="is_can_read" value="ខ្សោយ" ngModel required>
+<label class="custom-control-label" for="customRadioInline19">ខ្សោយ</label>
 </div>
 <div class="mt-2">
-  <p>រៀបរាប់ពីគោលដៅ​ និង ផែនការការសិក្សាអប់រំនិងជំនាញកន្លងមក</p>
+<p>តើអាចសរសេរអក្សរបានដែរឬទេ?</p>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+<input type="radio" id="customRadioInline20" name="customRadioInline20" class="custom-control-input"  name="is_can_write" id="is_can_write" value="បាទ/ចាស" ngModel required>
+<label class="custom-control-label" for="customRadioInline20">បាទ/ចាស</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+<input type="radio" id="customRadioInline21" name="customRadioInline20" class="custom-control-input" name="is_can_write" id="is_can_write" value="ទេ" ngModel required>
+<label class="custom-control-label" for="customRadioInline21">ទេ</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+<input type="radio" id="customRadioInline22" name="customRadioInline20" class="custom-control-input" name="is_can_write" id="is_can_write" value="ល្អ" ngModel required>
+<label class="custom-control-label" for="customRadioInline22">ល្អ</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+<input type="radio" id="customRadioInline23" name="customRadioInline20" class="custom-control-input" name="is_can_write" id="is_can_write" value="ល្មម" ngModel required>
+<label class="custom-control-label" for="customRadioInline23">ល្មម</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+<input type="radio" id="customRadioInline24" name="customRadioInline15" class="custom-control-input" name="is_can_write" id="is_can_write" value="ខ្សោយ" ngModel required>
+<label class="custom-control-label" for="customRadioInline24">ខ្សោយ</label>
+</div>
+<div class="mt-2">
+<p>រៀបរាប់ពីគោលដៅ​ និង ផែនការការសិក្សាអប់រំនិងជំនាញកន្លងមក</p>
 </div>
 
-  <label class="">ការអប់រំ</label>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<label class="">ការអប់រំ</label>
+<textarea name="desc_education" ngModel  #desc_education="ngModel" class="form-control" aria-label="With textarea"></textarea>
 
 
-  <label class="">វគ្គជំនាញ</label>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<label class="">វគ្គជំនាញ</label>
+<textarea name="desc_course_skill" ngModel  #desc_course_skill="ngModel" class="form-control" aria-label="With textarea"></textarea>
 
 <div class="mt-4" style="text-decoration-line: underline">
-    ប្រវត្តិនៃការងារ 
+  ប្រវត្តិនៃការងារ 
 </div>
 
-  <label class="">តើអ្នកមានវិជ្ជាជីវះអ្វីខ្លះ?</label>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<label class="">តើអ្នកមានវិជ្ជាជីវះអ្វីខ្លះ?</label>
+<textarea class="form-control" aria-label="With textarea"></textarea>
 
 <div class="mt-2">
-  <p>ស្ថានភាពការងារបច្ចុប្បន្ន</p>
+<p>ស្ថានភាពការងារបច្ចុប្បន្ន</p>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline25" name="customRadioInline25" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline25">អត់ការងារ</label>
+<input type="radio" id="customRadioInline25" name="customRadioInline25" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline25">អត់ការងារ</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline26" name="customRadioInline25" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline26">ម្ដងម្កល</label>
+<input type="radio" id="customRadioInline26" name="customRadioInline25" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline26">ម្ដងម្កល</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline27" name="customRadioInline25" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline27">មានការងារក្រៅម៉ោង</label>
+<input type="radio" id="customRadioInline27" name="customRadioInline25" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline27">មានការងារក្រៅម៉ោង</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline28" name="customRadioInline25" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline28">ការងារពេញម៉ោង</label>
+<input type="radio" id="customRadioInline28" name="customRadioInline25" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline28">ការងារពេញម៉ោង</label>
 </div>
 <div class="row">
-  <div class="col-6">
+<div class="col-6">
 
-      <label for="exampleInputEmail1">ប្រាក់ចំណូលប្រចាំខែពេលបច្ចុប្បន្ន</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ប្រាក់ចំណូលប្រចាំខែ">
+    <label for="exampleInputEmail1">ប្រាក់ចំណូលប្រចាំខែពេលបច្ចុប្បន្ន</label>
+    <input name="current_monthly_income" ngModel  #current_monthly_income="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ប្រាក់ចំណូលប្រចាំខែ">
 
-  </div>
-  <div class="col-6">
+</div>
+<div class="col-6">
 
-      <label for="exampleInputEmail1">ប្រាក់ចំណូលកាលពីមុន</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ប្រាក់ចំណូលកាលពីមុន">
-  
-  </div>
+    <label for="exampleInputEmail1">ប្រាក់ចំណូលកាលពីមុន</label>
+    <input name="pass_monthly_income" ngModel  #pass_monthly_income="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ប្រាក់ចំណូលកាលពីមុន">
+
+</div>
 </div>
 <div class="mt-2">
-  <p>តើកាលពីមិន​ឬ​ បច្ចុប្បន្នអ្នកមានជំងឺប្រចាំកាយ របួស ឬពិការភាពដែលនាំឪ្យរាំងស្ទះដល់ការចូលរួមតួនាទីការងារ រៀនសូត្រធីន ឆាឡេនដែរឬទេ?</p>
+<p>តើកាលពីមិន​ឬ​ បច្ចុប្បន្នអ្នកមានជំងឺប្រចាំកាយ របួស ឬពិការភាពដែលនាំឪ្យរាំងស្ទះដល់ការចូលរួមតួនាទីការងារ រៀនសូត្រធីន ឆាឡេនដែរឬទេ?</p>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline29" name="customRadioInline29" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline29">មាន</label>
+<input type="radio" id="customRadioInline29" name="customRadioInline29" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline29">មាន</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline30" name="customRadioInline29" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline30">មិនមាន</label>
+<input type="radio" id="customRadioInline30" name="customRadioInline29" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline30">មិនមាន</label>
 </div>
 <div class="mt-2">
-  <p>បើមាន  សូមពន្យល់</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>បើមាន  សូមពន្យល់</p>
+<textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="mt-4" style="text-decoration-line: underline">
-    ប្រវត្តិផ្នែកចិត្តសាស្រ្ត
+  ប្រវត្តិផ្នែកចិត្តសាស្រ្ត
 </div>
 <div class="mt-2">
-  <p>តើអ្នកធ្លាប់បានទទួលការព្យាបាលសុខភាពខួរក្បាលដែរឬទេ?</p>
+<p>តើអ្នកធ្លាប់បានទទួលការព្យាបាលសុខភាពខួរក្បាលដែរឬទេ?</p>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline31" name="customRadioInline31" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline31">ធ្លាប់</label>
+<input type="radio" id="customRadioInline31" name="customRadioInline31" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline31">ធ្លាប់</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline32" name="customRadioInline31" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline32">មិនធ្លាប់</label>
+<input type="radio" id="customRadioInline32" name="customRadioInline31" class="custom-control-input">
+<label class="custom-control-label" for="customRadioInline32">មិនធ្លាប់</label>
 </div>
 <div class="mt-2">
-  <p>បើធ្លាប់  សូមសរសេរចូល</p>
+<p>បើធ្លាប់  សូមសរសេរចូល</p>
 </div>
 <div class="row">
-  <div class="col-6">
+<div class="col-6">
 
-      <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+    <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
+    <input name="psychological_date" ngModel  #psychological_date="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
 
-  </div>
-  <div class="col-6">
+</div>
+<div class="col-6">
 
-      <label for="exampleInputEmail1">ឈ្មោះគ្លីនិច</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះគ្លីនិច">
+    <label for="exampleInputEmail1">ឈ្មោះគ្លីនិច</label>
+    <input name="clinic_name" ngModel  #clinic_name="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះគ្លីនិច">
 
-  </div>
+</div>
 </div>
 <div class="mt-2">
-  <p>មូលហេតុនៃការព្យាបាល</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>មូលហេតុនៃការព្យាបាល</p>
+<textarea name="psychological_treatment_reason" ngModel  #psychological_treatment_reason="ngModel"  class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="mt-2">
-  <p>លទ្ធផល </p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>លទ្ធផល </p>
+<textarea name="psychological_result" ngModel  #psychological_result="ngModel"  class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="mt-4" style="text-decoration-line: underline">
-    ប្រវត្តិការពិនិត្យព្យាបាលផ្ទាល់ខ្លួន /ក្រុមគ្រួសារ
+  ប្រវត្តិការពិនិត្យព្យាបាលផ្ទាល់ខ្លួន /ក្រុមគ្រួសារ
 </div>
 <div class="mt-2">
-  <p>សូមពិនិត្យសម្រាប់សមាជិកក្នុងក្រុមគ្រូសារអ្នកដែលធ្លាប់់មានបញ្ហាខាងក្រោម</p>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline33" name="customRadioInline33" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline33">ញៀនថ្នាំញៀន</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline34" name="customRadioInline33" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline34">ញៀនគ្រឿងស្រវឹង​ឬ បញ្ហាទាក់ទងនឹងគ្រឿងស្រវឹង</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline35" name="customRadioInline33" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline35">បញ្ហារាងកាយ</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline36" name="customRadioInline33" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline36">បញ្ហាសុខភាពខួរក្បាល</label>
-  </div>
+<p>សូមពិនិត្យសម្រាប់សមាជិកក្នុងក្រុមគ្រូសារអ្នកដែលធ្លាប់់មានបញ្ហាខាងក្រោម</p>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline33" name="customRadioInline33" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline33">ញៀនថ្នាំញៀន</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline34" name="customRadioInline33" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline34">ញៀនគ្រឿងស្រវឹង​ឬ បញ្ហាទាក់ទងនឹងគ្រឿងស្រវឹង</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline35" name="customRadioInline33" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline35">បញ្ហារាងកាយ</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline36" name="customRadioInline33" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline36">បញ្ហាសុខភាពខួរក្បាល</label>
+</div>
 </div>
 <div class="mt-2">
-  <p>សមាជិកម្នាក់ណាដែលមានបញ្ហាដូចខាងលើ</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>សមាជិកម្នាក់ណាដែលមានបញ្ហាដូចខាងលើ</p>
+<textarea name="desc_member_drug_addiction" ngModel  #desc_member_drug_addiction="ngModel"  class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="mt-2">
-  <p>សរសេរភាពជិកញឹកញាប់ដែលអ្នកប្រើថ្នាំញៀនខាងក្រោមនេះ</p>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline37" name="customRadioInline37" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline37">មិនដែល</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline38" name="customRadioInline37" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline38">មួយដង </label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline39" name="customRadioInline37" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline39">បីបួនដង</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline40" name="customRadioInline37" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline40">ជាប្រចាំ</label>
-  </div>
+<p>សរសេរភាពជិកញឹកញាប់ដែលអ្នកប្រើថ្នាំញៀនខាងក្រោមនេះ</p>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline37" name="customRadioInline37" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline37">មិនដែល</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline38" name="customRadioInline37" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline38">មួយដង </label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline39" name="customRadioInline37" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline39">បីបួនដង</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline40" name="customRadioInline37" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline40">ជាប្រចាំ</label>
+</div>
 </div>
 <div class="mt-2">
-  <p>ជ្រើសរើសប្រភេទថ្នាំញៀន</p>
-  <select class="custom-select custom-select-md mb-3">
-    <option selected>ជ្រើសរើសប្រភេទថ្នាំញៀន</option>
-    <option value="1">ស្រា</option>
-    <option value="2">បាបីតទូរ៉េត(ចុះ)</option>
-    <option value="3">អំហ្វេតាមីន(ឡើង)</option>
-    <option value="4">ហេរ៉ូអុីន</option>
-    <option value="5">កូកាអុីន</option>
-    <option value="6">ថ្នាំរវើរវាយ</option>
-    <option value="7">កាវ</option>
-    <option value="8">ថ្នាំជក់</option>
-    <option value="9">ម៉ាទឹកកក</option>
-    <option value="10">ថ្នាំឆ្កួត</option>
-    <option value="11">ថ្នាំសកម្ម</option>
-    <option value="12">អាភៀន</option>
-  </select>
-  <p>ផ្សេងៗទៀត(សូមបញ្ជាក់)</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>ជ្រើសរើសប្រភេទថ្នាំញៀន</p>
+<select class="custom-select custom-select-md mb-3">
+  <option selected>ជ្រើសរើសប្រភេទថ្នាំញៀន</option>
+  <option value="1">ស្រា</option>
+  <option value="2">បាបីតទូរ៉េត(ចុះ)</option>
+  <option value="3">អំហ្វេតាមីន(ឡើង)</option>
+  <option value="4">ហេរ៉ូអុីន</option>
+  <option value="5">កូកាអុីន</option>
+  <option value="6">ថ្នាំរវើរវាយ</option>
+  <option value="7">កាវ</option>
+  <option value="8">ថ្នាំជក់</option>
+  <option value="9">ម៉ាទឹកកក</option>
+  <option value="10">ថ្នាំឆ្កួត</option>
+  <option value="11">ថ្នាំសកម្ម</option>
+  <option value="12">អាភៀន</option>
+</select>
+<p>ផ្សេងៗទៀត(សូមបញ្ជាក់)</p>
+<textarea name="drug_addiction_desc_details" ngModel  #drug_addiction_desc_details="ngModel"    class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="mt-2">
-  <p>តើអ្នកធ្លាប់ចូលរួមក្នុងកម្មវីធីដើម្បីជួយដល់អ្នកទេពីមុន?</p>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline41" name="customRadioInline41" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline41">ធ្លាប់</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline42" name="customRadioInline41" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline42">មិនធ្លាប់</label>
-  </div>
+<p>តើអ្នកធ្លាប់ចូលរួមក្នុងកម្មវីធីដើម្បីជួយដល់អ្នកទេពីមុន?</p>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline41" name="customRadioInline41" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline41">ធ្លាប់</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline42" name="customRadioInline41" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline42">មិនធ្លាប់</label>
+</div>
 </div>
 <div class="mt-2">
-  <p>តើវាជាលក្ខណះសាសនា ឬមិនមែនជាសាសនា?</p>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline43" name="customRadioInline43" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline43">លក្ខណះសាសនា</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline44" name="customRadioInline43" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline44">មិនមែនជាសាសនា</label>
-  </div>
+<p>តើវាជាលក្ខណះសាសនា ឬមិនមែនជាសាសនា?</p>
+<div class="custom-control custom-radio custom-control-inline">
+  <input   type="radio" id="customRadioInline43" name="customRadioInline43" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline43">លក្ខណះសាសនា</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline44" name="customRadioInline43" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline44">មិនមែនជាសាសនា</label>
+</div>
 </div>
 <div class="mt-2">
-  <p>តើមានកម្មវិធីប៉ុន្មានដែលអ្នកមានចូលរួមពីមុន?</p>
-  <select class="custom-select custom-select-md mb-3">
-    <option selected>ជ្រើសរើស</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
+<p>តើមានកម្មវិធីប៉ុន្មានដែលអ្នកមានចូលរួមពីមុន?</p>
+<select class="custom-select custom-select-md mb-3">
+  <option selected>ជ្រើសរើស</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
 </div>
 <div class="row">
-  <div class="col-6">
+<div class="col-6">
 
-      <label for="exampleInputEmail1">កម្មវិធីទី១</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កម្មវិធីទី១">
+    <label for="exampleInputEmail1">កម្មវិធីទី១</label>
+    <input  name="event_name_one" ngModel  #event_name_one="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កម្មវិធីទី១">
 
-  </div>
-  <div class="col-6">
- 
-      <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
- 
-  </div>
+</div>
+<div class="col-6">
+
+    <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
+    <input name="event_time_joined_one" ngModel  #event_time_joined_one="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+
+</div>
 </div>
 <div class="mt-2">
-  <p>មូលហេតុដែលអ្នកចាកចេញ</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>មូលហេតុដែលអ្នកចាកចេញ</p>
+<textarea name="event_one_reason_leave" ngModel  #event_one_reason_leave="ngModel" class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="row">
-  <div class="col-6">
- 
-      <label for="exampleInputEmail1">កម្មវិធីទី២</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កម្មវិធីទី២">
-  
-  </div>
-  <div class="col-6">
+<div class="col-6">
 
-      <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
-      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+    <label for="exampleInputEmail1">កម្មវិធីទី២</label>
+    <input name="event_joined_two" ngModel  #event_joined_two="ngModel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កម្មវិធីទី២">
 
-  </div>
+</div>
+<div class="col-6">
+
+    <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
+    <input  name="event_joined_two_date" ngModel  #event_joined_two_date="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+
+</div>
 </div>
 <div class="mt-2">
-  <p>មូលហេតុដែលអ្នកចាកចេញ</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>មូលហេតុដែលអ្នកចាកចេញ</p>
+<textarea name="event_two_reason_leave" ngModel  #event_two_reason_leave="ngModel" class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="mt-2">
-  <p>តើអ្នកធ្លាប់ចូលរួមកម្មវិធីធីន ឆាឡេនដែរទេពីមុនមក?</p>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline45" name="customRadioInline45" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline45">បាទ/ចាស</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline46" name="customRadioInline45" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline46">ទេ</label>
-  </div>
+<p>តើអ្នកធ្លាប់ចូលរួមកម្មវិធីធីន ឆាឡេនដែរទេពីមុនមក?</p>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline45" name="customRadioInline45" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline45">បាទ/ចាស</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline46" name="customRadioInline45" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline46">ទេ</label>
+</div>
 </div>
 <div  class="row">
 <div class="mt-2 col-6">
-  <p>ពេលណា</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>ពេលណា</p>
+<textarea  name="challenge_time" ngModel  #challenge_time="ngModel" class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="mt-2 col-6">
-  <p>នៅទីណា</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>នៅទីណា</p>
+<textarea name="challenge_place" ngModel  #challenge_place="ngModel" class="form-control" aria-label="With textarea"></textarea>
 </div>
 </div>
 <div class="mt-2">
-  <p>ហេតុអ្វីបានជាអ្នកចាកចេញ?</p>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline47" name="customRadioInline47" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline47">មានជំងឺ</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline48" name="customRadioInline47" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline48">រត់ចេញដោយខ្លួនឯង</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline49" name="customRadioInline47" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline49">បានបំពេញចប់កម្មវិធី</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline50" name="customRadioInline47" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline50">កម្មវិធីបានបញ្ឈប់</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline51" name="customRadioInline47" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline51">ផ្សេងៗទៀត</label>
-  </div>
+<p>ហេតុអ្វីបានជាអ្នកចាកចេញ?</p>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline47" name="customRadioInline47" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline47">មានជំងឺ</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline48" name="customRadioInline47" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline48">រត់ចេញដោយខ្លួនឯង</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline49" name="customRadioInline47" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline49">បានបំពេញចប់កម្មវិធី</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline50" name="customRadioInline47" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline50">កម្មវិធីបានបញ្ឈប់</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline51" name="customRadioInline47" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline51">ផ្សេងៗទៀត</label>
+</div>
 </div>
 <div class="mt-4" style="text-decoration-line: underline">
-    ប្រវត្តិខាងវិញ្ញាណ
+  ប្រវត្តិខាងវិញ្ញាណ
 </div>
 <div class="mt-2">
-  <p>តើអ្នកជាសមាជិកក្នុងព្រះវិហារ ឬសាសនាណាមួយមែនទេ?</p>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline52" name="customRadioInline52" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline52">មែន</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline53" name="customRadioInline52" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline53">មិនមែន</label>
-  </div>
+<p>តើអ្នកជាសមាជិកក្នុងព្រះវិហារ ឬសាសនាណាមួយមែនទេ?</p>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline52" name="customRadioInline52" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline52">មែន</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline53" name="customRadioInline52" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline53">មិនមែន</label>
+</div>
 </div>
 <div class="mt-2 ">
-  <p>បើមែន មួយណា?</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>បើមែន មួយណា?</p>
+<textarea name="desc_religion" ngModel  #desc_religion="ngModel" class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="mt-2 ">
-  <p>តើអ្នកចូលញឹកញាប់ប៉ុណ្ណា?</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>តើអ្នកចូលញឹកញាប់ប៉ុណ្ណា?</p>
+<textarea name="desc_offen_read_book_religion" ngModel  #desc_offen_read_book_religion="ngModel" class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="mt-2">
-  <p>តើអ្នកមានអានសៀវភៅសាសនាផ្សេងៗដែរឬទេ?</p>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline54" name="customRadioInline54" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline54">មិនដែល</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline55" name="customRadioInline54" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline55">ពេលខ្លះ</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline56" name="customRadioInline54" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline56">ញឹកញាប់</label>
-  </div>
+<p>តើអ្នកមានអានសៀវភៅសាសនាផ្សេងៗដែរឬទេ?</p>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline54" name="customRadioInline54" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline54">មិនដែល</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline55" name="customRadioInline54" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline55">ពេលខ្លះ</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline56" name="customRadioInline54" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline56">ញឹកញាប់</label>
+</div>
 </div>
 <div class="mt-2 ">
-  <p>បើញឹកញាប់ មួយណា?</p>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<p>បើញឹកញាប់ មួយណា?</p>
+<textarea  name="offen_read_book_religion" ngModel  #offen_read_book_religion="ngModel"  class="form-control" aria-label="With textarea"></textarea>
 </div>
 
 
 
 </div>
 
+
+</form>

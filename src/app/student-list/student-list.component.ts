@@ -21,7 +21,7 @@ export class StudentListComponent implements OnInit {
 
 
   getStudents(){
-    this.http.get(environment.baseUrl + 'auth/students')
+    this.http.get(environment.baseUrl + 'students')
     .subscribe((res:any)=>{
 this.students = res.data;
     },
@@ -33,6 +33,10 @@ this.students = res.data;
       )
     }
     );
+  }
+  
+  rowClick(id){
+    this.router.navigate(['/admin/student-upsert',id])
   }
 
 }

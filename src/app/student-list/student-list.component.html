@@ -23,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of students">
+      <tr *ngFor="let student of students" (click)="rowClick(student.id)">
         <th scope="row">1</th>
         <td>{{student.fullname}}</td>
         <td>{{student.sex}}</td>

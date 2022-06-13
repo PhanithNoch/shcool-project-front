@@ -28,7 +28,6 @@ import { TokenService } from './shared/services/token.service';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentDocumentComponent } from './student-document/student-document.component';
 import { StudentUpsertComponent } from './student-upsert/student-upsert.component';
-import { StudentModelModel } from './student-model/student-model.model';
 
 @NgModule({
   declarations: [
@@ -53,7 +52,6 @@ import { StudentModelModel } from './student-model/student-model.model';
     StudentListComponent,
     StudentDocumentComponent,
     StudentUpsertComponent,
-    StudentModelModel,
 
   ],
   imports: [
