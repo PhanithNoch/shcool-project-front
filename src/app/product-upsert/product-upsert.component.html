@@ -1,1 +1,93 @@
-<p>product-upsert works!</p>
+<header>
+   <div class="row">
+       <div class="col-md-6">
+           <h2>Create Product</h2>
+       </div>
+    </div>
+</header>
+
+<main>
+    <form [formGroup]="form"  (ngSubmit)="submitForm()" novalidate>
+      <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Product Name</label>
+                <input formControlName="name" type="text" class="form-control" id="exampleInputEmail1" >
+              </div>
+              <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="alert alert-danger">
+                <div *ngIf="form.controls['name'].errors.required">
+               Product Name is required.
+               </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Price</label>
+                <input formControlName="price" type="number" class="form-control" id="exampleInputPassword1">
+                
+              </div>
+              <div *ngIf="form.controls['price'].invalid && form.controls['price'].touched" class="alert alert-danger">
+                <div *ngIf="form.controls['price'].errors.required">
+                  Price  is required.
+               </div>
+            </div>
+          </div>
+        
+       
+      </div>
+     <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Barcode</label>
+                <input formControlName="barcode" type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div *ngIf="form.controls['barcode'].invalid && form.controls['barcode'].touched" class="alert alert-danger">
+                <div *ngIf="form.controls['barcode'].errors.required">
+                  Barcode  is required.
+               </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Description</label>
+                <input formControlName="desc" type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+        </div>
+     </div>
+    
+       <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <div class="row">
+              <div class="mb-3">
+                <div class="col-sm-9">
+                  <!-- local preview  -->
+                  <div *ngIf="previewPath != null">
+                    <img width="200" [src]="previewPath" >
+                  </div>
+                  <!-- preview image from the server -->
+                  <div *ngIf="imageURL != null && previewPath == null">
+                    <img width="200px" src="{{imageURL}}" alt="">
+                  </div>
+            
+
+                  <span class="hidden-file">
+                    <input formControlName="image" type="file" #fileInput ng2FileSelect [uploader]="uploader" (onFileSelected)="onFileSelected($event)" />
+                  </span>
+                  <div class="btn-group" (click)="fileInput.click()">
+                   
+                   
+                  </div>
+                </div>
+              </div>
+
+            
+            </div>
+          </div>
+        </div>
+       </div>
+       <p>Form value: {{ form.value | json }}</p>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+</main>

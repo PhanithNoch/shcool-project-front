@@ -14,6 +14,9 @@ import { UserComponent } from './admin/user/user.component';
 import { PostAdminUpsertComponent } from './admin/post-admin-upsert/post-admin-upsert.component';
 import { ProductComponent } from './product/product.component';
 import { ProductUpsertComponent } from './product-upsert/product-upsert.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { StudentDocumentComponent } from './student-document/student-document.component';
+import { StudentUpsertComponent } from './student-upsert/student-upsert.component';
 
 const routes: Routes = [
   {path: '', component: WebsiteHomeComponent},
@@ -46,15 +49,30 @@ const routes: Routes = [
       {
         path: 'upsert/:id', component: PostAdminUpsertComponent,
       },
-      {
-        path: 'product', component: ProductComponent,
+  {
+        path: 'student-list', component: StudentListComponent,
       },
       {
-        path: 'product/:id', component: ProductComponent,
+        path: 'student-upsert', component: StudentUpsertComponent,
       },
       {
-        path: 'product-upsert', component: ProductUpsertComponent,
-      }
+        path: 'student-upsert/:id', component: StudentUpsertComponent,
+      },
+      {
+        path: 'student-document', component: StudentDocumentComponent,
+      },
+      // {
+      //   path: 'product', component: ProductComponent,
+      // },
+      // {
+      //   path: 'product/:id', component: ProductComponent,
+      // },
+      // {
+      //   path: 'product-upsert', component: ProductUpsertComponent,
+      // },
+      // {
+      //   path: 'product-upsert/:id', component: ProductUpsertComponent,
+      // }
     ]
   }
 ];

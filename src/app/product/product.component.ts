@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { Products } from '../shared/models/product_model';
@@ -12,14 +12,17 @@ import { Products } from '../shared/models/product_model';
 })
 export class ProductComponent implements OnInit {
  public products: Array<Products>;
+ id:any;
 
   lstPosts = [];
   constructor(
     private http:HttpClient,
-    private router:Router
+    private router:Router,
+
   ) { }
 
   ngOnInit(): void {
+
     this.getAllProducts();
   }
 
@@ -57,7 +60,7 @@ export class ProductComponent implements OnInit {
           'Your imaginary file has been deleted.',
           'success'
         )
-        this.http.delete(environment.baseUrl + 'post/' + id)
+        this.http.delete(environment.baseUrl + 'products/' + id)
         .subscribe((res:Products)=>{
           console.log(res);
           this.getAllProducts();

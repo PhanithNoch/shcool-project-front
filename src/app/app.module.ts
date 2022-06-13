@@ -14,7 +14,7 @@ import {HomeAdminComponent} from './admin/home-admin/home-admin.component';
 import {LoginComponent} from './admin/login/login.component';
 import {SignupComponent} from './admin/signup/signup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { ContactComponent } from './website/contact/contact.component';
 import { AboutComponent } from './website/about/about.component';
 import { PostComponent } from './website/post/post.component';
@@ -22,6 +22,13 @@ import { PostAdminComponent } from './admin/post-admin/post-admin.component';
 import { PostAdminUpsertComponent } from './admin/post-admin-upsert/post-admin-upsert.component';
 import { ProductComponent } from './product/product.component';
 import { ProductUpsertComponent } from './product-upsert/product-upsert.component';
+import { FileUploadModule } from 'ng2-file-upload';
+import { AfterLoginService } from './shared/services/after-login.service';
+import { TokenService } from './shared/services/token.service';
+import { StudentListComponent } from './student-list/student-list.component';
+import { StudentDocumentComponent } from './student-document/student-document.component';
+import { StudentUpsertComponent } from './student-upsert/student-upsert.component';
+import { StudentModelModel } from './student-model/student-model.model';
 
 @NgModule({
   declarations: [
@@ -42,7 +49,11 @@ import { ProductUpsertComponent } from './product-upsert/product-upsert.componen
     PostAdminComponent,
     PostAdminUpsertComponent,
     ProductComponent,
-    ProductUpsertComponent
+    ProductUpsertComponent,
+    StudentListComponent,
+    StudentDocumentComponent,
+    StudentUpsertComponent,
+    StudentModelModel,
 
   ],
   imports: [
@@ -50,9 +61,13 @@ import { ProductUpsertComponent } from './product-upsert/product-upsert.componen
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FileUploadModule
   ],
-  providers: [],
+  providers: [
+
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
