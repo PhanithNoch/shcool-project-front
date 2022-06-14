@@ -33,13 +33,13 @@
   <div class="col-6">
 
       <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
-      <input name="address" ngModel  #address="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
+      <input name="address" ngModel  #address="ngModel" [(ngModel)]="student.address"    type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
   
   </div>
   <div class="col-6">
 
       <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
-      <input name="phone" ngModel  #phone="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
+      <input name="phone" ngModel  #phone="ngModel" [(ngModel)]="student.phone"    type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
   
   </div>
  </div>
@@ -47,7 +47,7 @@
   <div class="col-3">
  
       <label for="exampleInputEmail1">ទំងន់</label>
-      <input  name="weight" ngModel  #weight="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំងន់">
+      <input  name="weight" ngModel  #weight="ngModel" [(ngModel)]="student.weight" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំងន់">
    
   </div>
   <div class="col-3">
