@@ -80,3 +80,13 @@ main {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+aside
+{
+    position: fixed;
+
+    height: 100%;
+    top: 0;
+    left: 0;
+
+   
+}

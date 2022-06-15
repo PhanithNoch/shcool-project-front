@@ -1,1 +1,641 @@
-<p>student-document works!</p>
+<div class="container mt-2">
+  <div class="col-8 ">
+    <h3 class="text-center mt-3 ">ឯកសារសិស្ស</h3>  
+  </div>
+  <nav ​class="mt-4">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">ការប្រឹក្សាយោបល់</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">រដ្ឋបាល</a>
+      
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">ការធ្វើបទសម្ភាសន៍</a>
+
+      <a class="nav-item nav-link" id="nav-individual-tab" data-toggle="tab" href="#nav-individual" role="tab" aria-controls="nav-individual" aria-selected="false">ផែនការមួយទល់នឹងមួយ</a>
+
+      <a class="nav-item nav-link" id="nav-health-tab" data-toggle="tab" href="#nav-health" role="tab" aria-controls="nav-health" aria-selected="false">របាយការណ៍សុខភាព</a>
+
+      <a class="nav-item nav-link" id="nav-budget-tab" data-toggle="tab" href="#nav-budget" role="tab" aria-controls="nav-budget" aria-selected="false">បញ្ចីថវិការ</a>
+
+      <a class="nav-item nav-link" id="nav-visitor-tab" data-toggle="tab" href="#nav-visitor" role="tab" aria-controls="nav-visitor" aria-selected="false">ការមកសួរសុខទុក្ខ</a>
+    </div>
+  </nav>
+
+
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="row  container-md">
+          <div class="col-8 ">
+            <h3 class="text-center mt-3 ">ការប្រឹក្សាយោបល់   </h3>  
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-primary float-right mr-4 mt-4"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">បង្កើតថ្មី</button> 
+          </div>
+          
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">បំពេញការប្រឹក្សាយោបល់</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">កាលបរិច្ឆេទ</label>
+                      <input type="date" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">កិច្ចណាត់ជួប</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">សំគាល់</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">បិទ</button>
+                  <button type="button" class="btn btn-primary">រក្សាទុក</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div class="container-md mt-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">ល.រ</th>
+                <th scope="col">កាលបរិច្ឆេទ</th>
+                <th scope="col">កិច្ចណាត់ជួប</th>
+                <th scope="col">សំគាល់</th>
+                <th scope="col">សកម្មភាព</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>1/4/2022</td>
+                <td>example1</td>
+                <td>example2</td>
+                <td class="">
+                  <button type="button" class="btn btn-success ">កែប្រែ</button>
+                  <button type="button" class="btn btn-danger ml-2">លុប</button>
+                </td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>2/5/2021</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td class="">
+                  <button type="button" class="btn btn-success ">កែប្រែ</button>
+                  <button type="button" class="btn btn-danger ml-2">លុប</button>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="container">
+          <div class="mt-3" >
+            <h3 class="mt-4">រដ្ឋបាល</h3>
+          </div>
+          <form>
+            <label for="exampleInputEmail1">បំពេញឈ្មោះ</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="បំពេញឈ្មោះ">
+            <div class="mt-4 text-right">
+              <button type="button" class="btn btn-primary">រក្សាទុក</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="container">
+          <div class="mt-4" style="text-decoration-line: underline">
+            <h4 >Follow-up interview</h4>
+          </div>
+          <div class="row mt-3">
+              <div class="col-6">
+                <form>
+                  <label for="exampleInputEmail1">ឈ្មោះអតិថិជន</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
+                </form>
+              </div>
+              <div class="col-6">
+                <form>
+                  <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
+                  <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+                </form>
+              </div>
+          </div> 
+          <form class="mt-2">
+            <label class="">អ្នកកាន់ករណី</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </form> 
+          <form class="mt-2">
+            <label class="">អ្នកចូលរួម</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </form>
+          <form class="mt-2">
+            <label class="">ទីកន្លែង</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </form>
+          <form class="mt-2">
+            <label class=""  style="text-decoration-line: underline">១.ផែនការ</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </form>
+          <form class="mt-2">
+            <label class=""  style="text-decoration-line: underline">២.បញ្ហាដែលជួបប្រទះ</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </form>
+          <form class="mt-2">
+            <label class=""  style="text-decoration-line: underline">៣.ព័ត៌មានដែលសំខាន់ និងបញ្ហាថ្មីៗ</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </form>
+          <form class="mt-2">
+            <label class=""  style="text-decoration-line: underline">៤.ការធ្វើអន្តរាគមន៍</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </form>
+          <form class="mt-2">
+            <label class=""  style="text-decoration-line: underline">៥.ការប៉ានប្រមាណ</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </form>
+          <form class="mt-2">
+            <label class=""  style="text-decoration-line: underline">៦.ផែនការសកម្មភាពបន្ត</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </form>
+          <div class="mt-4 text-right">
+            <button type="button" class="btn btn-primary">រក្សាទុក</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-individual" role="tabpanel" aria-labelledby="nav-individual-tab">
+        <div class="container " >
+          <div class="mt-4" style="text-decoration-line: underline">
+            <h4 >ផែនការមួយទល់នឹងមួយ</h4>
+          </div>
+          <div class="row mt-3">
+            <div class="col-4">
+              <form>
+                <label for="exampleInputEmail1">ឈ្មោះអតិថិជន</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
+              </form>
+            </div>
+            <div class="col-4">
+              <form>
+                <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
+                <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+              </form>
+            </div>
+            <div class="col-4">
+              <form>
+                <label for="exampleInputEmail1">កាលបរិច្ឆេទរំលឹកឡើងវិញ</label>
+                <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+              </form>
+            </div>
+        </div> 
+        <div class="row">
+          <div class="col-6">
+            <form class="mt-2">
+              <label class="">រួមមានគ្រួសាររបស់សិស្ស</label>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </form> 
+          </div>
+          <div class="col-6">
+            <form class="mt-2">
+              <label class="">ការរំលឹកឡើងវិញ</label>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <form class="mt-2">
+              <label class="">និមិត្តរបស់សិស្ស</label>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </form> 
+          </div>
+          <div class="col-6">
+            <form class="mt-2">
+              <label class="">ការរំលឹកឡើងវិញ</label>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </form> 
+          </div>
+        </div>
+        <form class="mt-2">
+          <label class="">តម្រូវការផែនការសកម្មភាព</label>
+          <textarea class="form-control" aria-label="With textarea"></textarea>
+        </form>
+        <div class="row">
+          <div class="col-6">
+            <form class="mt-2">
+              <label class="">ការសួរសុខទុក្ខគ្រួសារ</label>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </form> 
+          </div>
+          <div class="col-6">
+            <form class="mt-2">
+              <label class="">ការរំលឹកឡើងវិញ</label>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <form class="mt-2">
+              <label class="">ការធ្វើសមាហរណ៍កម្មបញ្ចុនសិស្សទៅកន្លែងដើមវិញ</label>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </form> 
+          </div>
+          <div class="col-6">
+            <form class="mt-2">
+              <label class="">ការរំលឹកឡើងវិញ</label>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </form> 
+          </div>
+        </div>
+        <form class="mt-2">
+          <label class="">តម្រូវការផែនការសកម្មភាព</label>
+          <textarea class="form-control" aria-label="With textarea"></textarea>
+        </form>
+        <div class="mt-4 text-right">
+          <button type="button" class="btn btn-primary">រក្សាទុក</button>
+        </div> 
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-health" role="tabpanel" aria-labelledby="nav-health-tab">
+        <div class="row  container-md">
+          <div class="col-8 ">
+            <h3 class="text-center mt-3 ">របាយការណ៍សុខភាព</h3>  
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-primary float-right mr-4 mt-4"  data-toggle="modal" data-target="#exampleModal1" data-whatever="@mdo">បង្កើតថ្មី</button> 
+          </div>
+          
+          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">បំពេញរបាយការណ៍</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">កាលបរិច្ឆេទ</label>
+                      <input type="date" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">ឈ្មោះសិស្ស</label>
+                      <input type="value" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">ការពីពណ៍នាជម្ងឺ</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">ពេទ្យណា</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">អ្នកជូនទៅ</label>
+                          <input type="value" class="form-control" id="recipient-name">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">អ្នកចំណាយ</label>
+                          <input type="value" class="form-control" id="recipient-name">
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">ផ្សេងៗ</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">បិទ</button>
+                  <button type="button" class="btn btn-primary">រក្សាទុក</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div class="container-md mt-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">ល.រ</th>
+                <th scope="col">កាលបរិច្ឆេទ</th>
+                <th scope="col">ឈ្មោះសិស្ស</th>
+                <th scope="col">ការពីពណ៍នាជម្ងឺ</th>
+                <th scope="col">ពេទ្យណា</th>
+                <th scope="col">អ្នកជូនទៅ</th>
+                <th scope="col">អ្នកចំណាយ</th>
+                <th scope="col">ផ្សេងៗ</th>
+                <th scope="col">សកម្មភាព</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>1/4/2022</td>
+                <td>example1</td>
+                <td>example2</td>
+                <td>example1</td>
+                <td>example1</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td class="">
+                  <button type="button" class="btn btn-success ">កែប្រែ</button>
+                  <button type="button" class="btn btn-danger ml-2">លុប</button>
+                </td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>2/5/2021</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td class="">
+                  <button type="button" class="btn btn-success ">កែប្រែ</button>
+                  <button type="button" class="btn btn-danger ml-2">លុប</button>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="tab-pane fade" id="nav-budget" role="tabpanel" aria-labelledby="nav-budget-tab">
+        <div class="row  container-md">
+          <div class="col-8 ">
+            <h3 class="text-center mt-3 ">បញ្ចីចំណូល​ ចំណាយរបស់សិស្ស</h3>  
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-primary float-right mr-4 mt-4"  data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">បង្កើតថ្មី</button> 
+          </div>
+          
+          <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">បំពេញតារាង</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">កាលបរិច្ឆេទ</label>
+                      <input type="date" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">ឈ្មោះ</label>
+                      <input type="value" class="form-control" id="recipient-name"​  placeholder="ឈ្មោះ">
+                    
+                   
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">ចំណូល</label>
+                          <input type="value" class="form-control" id="recipient-name"​ placeholder="ចំណូល">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">ចំណាយ</label>
+                          <input type="value" class="form-control" id="recipient-name"​ placeholder="ចំណាយ">
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">សមតុល្យ</label>
+                          <input type="value" class="form-control" id="recipient-name"​ placeholder="សមតុល្យ">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">ទិញ</label>
+                          <input type="value" class="form-control" id="recipient-name"​ placeholder="ទិញ">
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">ផ្សេងៗ</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">បិទ</button>
+                  <button type="button" class="btn btn-primary">រក្សាទុក</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div class="container-md mt-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">កាលបរិច្ឆេទ</th>
+                <th scope="col">ឈ្មោះ</th>
+                <th scope="col">ចំណូល</th>
+                <th scope="col">ចំណាយ</th>
+                <th scope="col">សមតុល្យ</th>
+                <th scope="col">ទិញ</th>
+                <th scope="col">ផ្សេងៗ</th>
+                <th scope="col">សកម្មភាព</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                
+                <td>1/4/2022</td>
+                <td>example1</td>
+                <td>example2</td>
+                <td>example1</td>
+                <td>example1</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td class="">
+                  <button type="button" class="btn btn-success ">កែប្រែ</button>
+                  <button type="button" class="btn btn-danger ml-2">លុប</button>
+                </td>
+                
+              </tr>
+              <tr>
+                <td>2/5/2021</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td class="">
+                  <button type="button" class="btn btn-success ">កែប្រែ</button>
+                  <button type="button" class="btn btn-danger ml-2">លុប</button>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div> 
+
+
+      <div class="tab-pane fade" id="nav-visitor" role="tabpanel" aria-labelledby="nav-visitor-tab">
+        <div class="row  container-md">
+          <div class="col-8 ">
+            <h3 class="text-center mt-3 ">របាយការណ៍ការមកសួរសុខទុក្ខ</h3>  
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-primary float-right mr-4 mt-4"  data-toggle="modal" data-target="#exampleModal3" data-whatever="@mdo">បង្កើតថ្មី</button> 
+          </div>
+          
+          <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">ការមកសួរសុខទុក្ខ</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">កាលបរិច្ឆេទ</label>
+                      <input type="date" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">ឈ្មោះអ្នកមកសួរសុខទុក្ខ</label>
+                      <input type="value" class="form-control" id="recipient-name"​ placeholder="ឈ្មោះអ្នកមកសួរសុខទុក្ខ">
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">លេខទូរសព្ទ័</label>
+                          <input type="value" class="form-control" id="recipient-name" placeholder="លេខទូរសព្ទ័">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">ទំនាក់ទំនងជា</label>
+                          <input type="value" class="form-control" id="recipient-name" placeholder="ទំនាក់ទំនងជា">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">ម៉ោងចូល</label>
+                          <input type="value" class="form-control" id="recipient-name" placeholder="ម៉ោងចូល">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">ម៉ោងចេញ</label>
+                          <input type="value" class="form-control" id="recipient-name" placeholder="ម៉ោងចេញ">
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">ផ្សេងៗ</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">បិទ</button>
+                  <button type="button" class="btn btn-primary">រក្សាទុក</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div class="container-md mt-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">ល.រ</th>
+                <th scope="col">កាលបរិច្ឆេទ</th>
+                <th scope="col">ឈ្មោះអ្នកមកសួរសុខទុក្ខ</th>
+                <th scope="col">លេខទូរសព្ទ័</th>
+                <th scope="col">ទំនាក់ទំនងជា</th>
+                <th scope="col">ម៉ោងចូល</th>
+                <th scope="col">ម៉ោងចេញ</th>
+                <th scope="col">ផ្សេងៗ</th>
+                <th scope="col">សកម្មភាព</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>1/4/2022</td>
+                <td>example1</td>
+                <td>example2</td>
+                <td>example1</td>
+                <td>example1</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td class="">
+                  <button type="button" class="btn btn-success ">កែប្រែ</button>
+                  <button type="button" class="btn btn-danger ml-2">លុប</button>
+                </td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>2/5/2021</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td>example2</td>
+                <td class="">
+                  <button type="button" class="btn btn-success ">កែប្រែ</button>
+                  <button type="button" class="btn btn-danger ml-2">លុប</button>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>  
+
