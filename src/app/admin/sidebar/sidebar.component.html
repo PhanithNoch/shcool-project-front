@@ -72,35 +72,74 @@
 
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
-      <a  class="nav-link link-dark" [routerLink]="['/admin/student-list']"    aria-current="page">
+      <a  class="nav-link link-dark" [routerLink]="['/admin/student-list']"  routerLinkActive="active"   aria-current="page">
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-        Students
-      </a>
-    </li>
-  
-    <li class="nav-item">
-      <a  class="nav-link link-dark" [routerLink]="['/admin/student-document']"    aria-current="page">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-        Student Document
+        បញ្ចីសិស្ស
       </a>
     </li>
 
     <li class="nav-item">
-      <a  class="nav-link link-dark" [routerLink]="['/admin/product']"    aria-current="page">
+      <a  class="nav-link link-dark" [routerLink]="['/admin/student-document']" routerLinkActive="active"   aria-current="page">
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-        Payment
+        ឯកសារសិស្ស
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a  class="nav-link link-dark" [routerLink]="['/admin/payments']" routerLinkActive="active"   aria-current="page">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+        ការបង់ប្រាក់
       </a>
     </li>
     <li>
-      <a  class="nav-link link-dark" [routerLink]="['/admin/user']" >
+      <a  class="nav-link link-dark" [routerLink]="['/admin/user']" routerLinkActive="active">
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
         Users
       </a>
     </li>
+    <li>
+      <a  class="nav-link link-dark" [routerLink]="['/admin/greetings']" routerLinkActive="active">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+        សួរសុខទុក្ខ
+      </a>
+    </li>
+    <li>
+      <a  class="nav-link link-dark" [routerLink]="['/admin/user']" routerLinkActive="active">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+        បញ្ចីថវិការ
+      </a>
+    </li>
+    <li>
+      <a  class="nav-link link-dark" [routerLink]="['/admin/health']" routerLinkActive="active">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+        សុខភាព
+      </a>
+    </li>
+    <li>
+      <a  class="nav-link link-dark" [routerLink]="['/admin/plans']" routerLinkActive="active">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+        ផែនការ
+      </a>
+    </li>
+    <li>
+      <a  class="nav-link link-dark" [routerLink]="['/admin/interview']" routerLinkActive="active">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+        ការធ្វើបទសម្ភាសន៍
+      </a>
+    </li>
+    <li>
+      <a  class="nav-link link-dark" [routerLink]="['/admin/administration']" routerLinkActive="active">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+        រដ្ឋបាល
+      </a>
+    </li>
+
+
+
   </ul>
   <hr>
   <div class="dropdown">
-    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
       <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
       <strong>mdo</strong>
     </a>
@@ -109,7 +148,7 @@
       <li><a class="dropdown-item" href="#">Settings</a></li>
       <li><a class="dropdown-item" href="#">Profile</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" (click)="signOut()">Sign out</a></li>
+      <li></li>
     </ul>
   </div>
 </div>

@@ -1,13 +1,8 @@
 
 
-main {
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100vh;
-  height: -webkit-fill-available;
-  max-height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
+a{
+  text-decoration: none;
+  padding: 15px;
 }
 
 .b-example-divider {
@@ -88,5 +83,5 @@ aside
     top: 0;
     left: 0;
 
-   
+
 }

@@ -21,13 +21,24 @@ import { PostComponent } from './website/post/post.component';
 import { PostAdminComponent } from './admin/post-admin/post-admin.component';
 import { PostAdminUpsertComponent } from './admin/post-admin-upsert/post-admin-upsert.component';
 import { ProductComponent } from './product/product.component';
-import { ProductUpsertComponent } from './product-upsert/product-upsert.component';
+import { ProductUpsertComponent } from './admin/product-upsert/product-upsert.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { AfterLoginService } from './shared/services/after-login.service';
 import { TokenService } from './shared/services/token.service';
-import { StudentListComponent } from './student-list/student-list.component';
-import { StudentDocumentComponent } from './student-document/student-document.component';
+import { StudentListComponent } from './admin/student-list/student-list.component';
+import { StudentDocumentComponent } from './admin/student-document/student-document.component';
 import { StudentUpsertComponent } from './student-upsert/student-upsert.component';
+import { PaymentComponent } from './admin/payment/payment.component';
+import { HealthComponent } from './admin/health/health.component';
+import { AdministrationComponent } from './admin/administration/administration.component';
+import { PlanComponent } from './admin/plan/plan.component';
+import { InterviewComponent } from './admin/interview/interview.component';
+import { PaymentUpsertComponent } from './admin/payment-upsert/payment-upsert.component';
+import { PlanUpsertComponent } from './admin/plan-upsert/plan-upsert.component';
+import { AdministrationUpsertComponent } from './admin/administration-upsert/administration-upsert.component';
+import { InterviewUpsertComponent } from './admin/interview-upsert/interview-upsert.component';
+import { HealthUpsertComponent } from './health-upsert/health-upsert.component';
+import { GreetingsComponent } from './greetings/greetings.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +63,17 @@ import { StudentUpsertComponent } from './student-upsert/student-upsert.componen
     StudentListComponent,
     StudentDocumentComponent,
     StudentUpsertComponent,
+    PaymentComponent,
+    HealthComponent,
+    AdministrationComponent,
+    PlanComponent,
+    InterviewComponent,
+    PaymentUpsertComponent,
+    PlanUpsertComponent,
+    AdministrationUpsertComponent,
+    InterviewUpsertComponent,
+    HealthUpsertComponent,
+    GreetingsComponent,
 
   ],
   imports: [

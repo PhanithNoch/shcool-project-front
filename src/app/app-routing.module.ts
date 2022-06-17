@@ -13,16 +13,27 @@ import { PostAdminComponent } from './admin/post-admin/post-admin.component';
 import { UserComponent } from './admin/user/user.component';
 import { PostAdminUpsertComponent } from './admin/post-admin-upsert/post-admin-upsert.component';
 import { ProductComponent } from './product/product.component';
-import { ProductUpsertComponent } from './product-upsert/product-upsert.component';
-import { StudentListComponent } from './student-list/student-list.component';
-import { StudentDocumentComponent } from './student-document/student-document.component';
+import { ProductUpsertComponent } from './admin/product-upsert/product-upsert.component';
+import { StudentListComponent } from './admin/student-list/student-list.component';
+import { StudentDocumentComponent } from './admin/student-document/student-document.component';
 import { StudentUpsertComponent } from './student-upsert/student-upsert.component';
+import {PaymentComponent} from './admin/payment/payment.component';
+import {PaymentUpsertComponent} from './admin/payment-upsert/payment-upsert.component';
+import {PlanComponent} from './admin/plan/plan.component';
+import {PlanUpsertComponent} from './admin/plan-upsert/plan-upsert.component';
+import {AdministrationComponent} from './admin/administration/administration.component';
+import {AdministrationUpsertComponent} from './admin/administration-upsert/administration-upsert.component';
+import {InterviewComponent} from './admin/interview/interview.component';
+import {InterviewUpsertComponent} from './admin/interview-upsert/interview-upsert.component';
+import {HealthComponent} from './admin/health/health.component';
+import {HealthUpsertComponent} from './health-upsert/health-upsert.component';
+import {GreetingsComponent} from './greetings/greetings.component';
 
 const routes: Routes = [
   {path: '', component: WebsiteHomeComponent},
-  {path:'post',component:PostComponent},
-  {path:'contact',component:ContactComponent},
-  {path:'about',component:AboutComponent},
+  {path: 'post', component: PostComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'about', component: AboutComponent},
 
   {
     path: 'login', component: LoginComponent, canActivate: [BeforeLoginService]
@@ -35,7 +46,7 @@ const routes: Routes = [
     path: 'admin', component: HomeAdminComponent, canActivate: [AfterLoginService],
     children: [
       {
-        path: '', redirectTo: 'post', pathMatch: 'full'
+        path: '', redirectTo: 'student-list', pathMatch: 'full'
       },
       {
         path: 'post', component: PostAdminComponent, canActivate: [AfterLoginService],
@@ -61,6 +72,43 @@ const routes: Routes = [
       {
         path: 'student-document', component: StudentDocumentComponent,
       },
+      {
+        path: 'payments', component: PaymentComponent,
+      },
+      {
+        path: 'payments-upsert/:id', component: PaymentUpsertComponent,
+      },
+      {
+        path: 'plans', component: PlanComponent,
+      },
+      {
+        path: 'plans-upsert/:id', component: PlanUpsertComponent
+      },
+
+      {
+        path: 'administration', component: AdministrationComponent
+      },
+      {
+        path: 'administration/:id', component: AdministrationUpsertComponent
+      },
+
+      {
+        path: 'interview', component: InterviewComponent
+      },
+      {
+        path: 'interview-upsert/:id', component: InterviewUpsertComponent
+      },
+      {
+        path: 'health', component: HealthComponent
+      },
+      {
+        path: 'health-upsert/:id', component: HealthUpsertComponent
+      },
+
+      {
+        path: 'greetings', component: GreetingsComponent
+      },
+
       // {
       //   path: 'product', component: ProductComponent,
       // },

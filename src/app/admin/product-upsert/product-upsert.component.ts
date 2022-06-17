@@ -3,7 +3,7 @@ import { FileUploader, FileLikeObject } from 'ng2-file-upload';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Products } from '../shared/models/product_model';
+import { Products } from '../../shared/models/product_model';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -29,20 +29,20 @@ export class ProductUpsertComponent implements OnInit {
     this.form =    this.fb.group({
       name: new FormControl(null, [
         Validators.required,
-      
+
       ]),
       price: new FormControl(null, [
         Validators.required,
-      
+
       ]),
       barcode: new FormControl(null, [
         Validators.required,
-      
+
       ]),
       desc: new FormControl(),
       image: new FormControl(),
     });
-    
+
     this.uploader.onAfterAddingFile = (fileItem) => {
       this.previewPath = this.sanitizer.bypassSecurityTrustUrl((window.URL.createObjectURL(fileItem._file)));
     }
@@ -62,7 +62,7 @@ export class ProductUpsertComponent implements OnInit {
     }
 
 
-        
+
 
 
   }
@@ -78,7 +78,7 @@ export class ProductUpsertComponent implements OnInit {
         price: this.product.price,
         barcode: this.product.barcode ,
         desc: this.product.desc,
-        image:this.product.image 
+        image:this.product.image
     });
     },
     error => {
@@ -135,12 +135,12 @@ export class ProductUpsertComponent implements OnInit {
         });
       }
 
-   
-      
+
+
     }else{
       Swal.fire(
         'Message',
-      
+
         'សូមប្រាកដថាអ្នកបានបញ្ចូលទិន្នន័យបានត្រឹមត្រូវ'
       )
     }
