@@ -16,7 +16,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductUpsertComponent } from './admin/product-upsert/product-upsert.component';
 import { StudentListComponent } from './admin/student-list/student-list.component';
 import { StudentDocumentComponent } from './admin/student-document/student-document.component';
-import { StudentUpsertComponent } from './student-upsert/student-upsert.component';
+import { StudentUpsertComponent } from './admin/student-upsert/student-upsert.component';
 import {PaymentComponent} from './admin/payment/payment.component';
 import {PaymentUpsertComponent} from './admin/payment-upsert/payment-upsert.component';
 import {PlanComponent} from './admin/plan/plan.component';
@@ -26,8 +26,8 @@ import {AdministrationUpsertComponent} from './admin/administration-upsert/admin
 import {InterviewComponent} from './admin/interview/interview.component';
 import {InterviewUpsertComponent} from './admin/interview-upsert/interview-upsert.component';
 import {HealthComponent} from './admin/health/health.component';
-import {HealthUpsertComponent} from './health-upsert/health-upsert.component';
-import {GreetingsComponent} from './greetings/greetings.component';
+import {HealthUpsertComponent} from './admin/health-upsert/health-upsert.component';
+import {GreetingsComponent} from './admin/greetings/greetings.component';
 
 const routes: Routes = [
   {path: '', component: WebsiteHomeComponent},
@@ -94,6 +94,9 @@ const routes: Routes = [
 
       {
         path: 'interview', component: InterviewComponent
+      },
+      {
+        path: 'interview-upsert', component: InterviewUpsertComponent
       },
       {
         path: 'interview-upsert/:id', component: InterviewUpsertComponent

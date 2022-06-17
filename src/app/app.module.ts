@@ -27,7 +27,6 @@ import { AfterLoginService } from './shared/services/after-login.service';
 import { TokenService } from './shared/services/token.service';
 import { StudentListComponent } from './admin/student-list/student-list.component';
 import { StudentDocumentComponent } from './admin/student-document/student-document.component';
-import { StudentUpsertComponent } from './student-upsert/student-upsert.component';
 import { PaymentComponent } from './admin/payment/payment.component';
 import { HealthComponent } from './admin/health/health.component';
 import { AdministrationComponent } from './admin/administration/administration.component';
@@ -37,8 +36,11 @@ import { PaymentUpsertComponent } from './admin/payment-upsert/payment-upsert.co
 import { PlanUpsertComponent } from './admin/plan-upsert/plan-upsert.component';
 import { AdministrationUpsertComponent } from './admin/administration-upsert/administration-upsert.component';
 import { InterviewUpsertComponent } from './admin/interview-upsert/interview-upsert.component';
-import { HealthUpsertComponent } from './health-upsert/health-upsert.component';
-import { GreetingsComponent } from './greetings/greetings.component';
+import { BudgetlistComponent } from './budgetlist/budgetlist.component';
+import {StudentUpsertComponent} from './admin/student-upsert/student-upsert.component';
+import {GreetingsComponent} from './admin/greetings/greetings.component';
+import {HealthUpsertComponent} from './admin/health-upsert/health-upsert.component';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +76,7 @@ import { GreetingsComponent } from './greetings/greetings.component';
     InterviewUpsertComponent,
     HealthUpsertComponent,
     GreetingsComponent,
+    BudgetlistComponent,
 
   ],
   imports: [

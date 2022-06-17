@@ -3,6 +3,7 @@ import {AuthService} from '../../shared/services/auth.service';
 import {TokenService} from '../../shared/services/token.service';
 import {Router} from '@angular/router';
 import {AuthGuardService} from '../../shared/services/auth-guard.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +23,8 @@ export class SignupComponent implements OnInit {
     private auth: AuthService,
     private token: TokenService,
     private router: Router,
-    private authGuard: AuthGuardService
+    private authGuard: AuthGuardService,
+    private _location: Location
   ) {
   }
 
@@ -35,11 +37,13 @@ export class SignupComponent implements OnInit {
       res => this.handleResponse(res)
     );
   }
-
   handleResponse(data) {
     this.token.handleToken(data);
     this.authGuard.changeAuthStatus(true);
     this.router.navigateByUrl('/admin/post');
   }
 
+  back(){
+this._location.back();
+  }
 }
