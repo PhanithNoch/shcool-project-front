@@ -1,0 +1,10 @@
+app-sidebar {
+  display: block;
+}
+app-print-receipt {
+  display: block;
+}
+
+app-main-page {
+  display: none;
+}

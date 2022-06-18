@@ -36,10 +36,12 @@ import { PaymentUpsertComponent } from './admin/payment-upsert/payment-upsert.co
 import { PlanUpsertComponent } from './admin/plan-upsert/plan-upsert.component';
 import { AdministrationUpsertComponent } from './admin/administration-upsert/administration-upsert.component';
 import { InterviewUpsertComponent } from './admin/interview-upsert/interview-upsert.component';
-import { BudgetlistComponent } from './budgetlist/budgetlist.component';
+import { BudgetlistComponent } from './admin/budgetlist/budgetlist.component';
 import {StudentUpsertComponent} from './admin/student-upsert/student-upsert.component';
 import {GreetingsComponent} from './admin/greetings/greetings.component';
 import {HealthUpsertComponent} from './admin/health-upsert/health-upsert.component';
+import { PrintReceiptComponent } from './admin/print-receipt/print-receipt.component';
+import {NgxPrintModule} from 'ngx-print';
 
 
 @NgModule({
@@ -77,6 +79,7 @@ import {HealthUpsertComponent} from './admin/health-upsert/health-upsert.compone
     HealthUpsertComponent,
     GreetingsComponent,
     BudgetlistComponent,
+    PrintReceiptComponent,
 
   ],
   imports: [
@@ -85,7 +88,8 @@ import {HealthUpsertComponent} from './admin/health-upsert/health-upsert.compone
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FileUploadModule
+    FileUploadModule,
+    NgxPrintModule
   ],
   providers: [
 

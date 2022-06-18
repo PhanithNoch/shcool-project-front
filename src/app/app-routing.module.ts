@@ -28,6 +28,7 @@ import {InterviewUpsertComponent} from './admin/interview-upsert/interview-upser
 import {HealthComponent} from './admin/health/health.component';
 import {HealthUpsertComponent} from './admin/health-upsert/health-upsert.component';
 import {GreetingsComponent} from './admin/greetings/greetings.component';
+import {BudgetlistComponent} from './admin/budgetlist/budgetlist.component';
 
 const routes: Routes = [
   {path: '', component: WebsiteHomeComponent},
@@ -110,6 +111,10 @@ const routes: Routes = [
 
       {
         path: 'greetings', component: GreetingsComponent
+      },
+
+      {
+        path: 'budgetlist', component: BudgetlistComponent
       },
 
       // {

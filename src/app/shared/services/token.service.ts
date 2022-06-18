@@ -13,10 +13,14 @@ export class TokenService {
   }
 
 
-
-  storeUserInfo(user){
-    localStorage.setItem('user_info',JSON.stringify(user));
+  getUserInfo() {
+    return JSON.parse(localStorage.getItem('user_info'));
   }
+
+  storeUserInfo(user) {
+    localStorage.setItem('user_info', JSON.stringify(user));
+  }
+
   handleToken(data) {
     console.log('data : ', data);
     this.storeUserInfo(data.user);

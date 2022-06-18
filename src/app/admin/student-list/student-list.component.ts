@@ -34,7 +34,7 @@ this.students = res.data;
     }
     );
   }
-  
+
   rowClick(id){
     this.router.navigate(['/admin/student-upsert',id])
   }

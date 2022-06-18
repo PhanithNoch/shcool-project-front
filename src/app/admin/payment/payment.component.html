@@ -1,1 +1,130 @@
-<p>payment works!</p>
+
+<div class="row bg-info p-2">
+  <div class="col-md-6">
+    <h3>ការបង់ប្រាក់</h3>
+  </div>
+  <div class="col-md-6">
+<!--    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-sm btn-primary float-end align-middle">Create</button>-->
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">ឈ្មោះ</th>
+    <th scope="col">ថ្ងៃខែឆ្នាំ</th>
+    <th scope="col">អត្តសញ្ញាត្តិបណ្ឌលេខ</th>
+    <th scope="col">បង់ប្រាក់</th>
+    <th scope="col">AMOUNT</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of students; let i = index" (click)="rowClick(student.id)">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{student.fullname}}</td>
+    <td>{{student.dob}}</td>
+    <td>{{student.id_number}}</td>
+    <td [ngStyle]="{ 'color': student?.unpaid  ? 'red' : 'black'}">{{student.unpaid? 'មិនទាន់បង់ប្រាក់' : 'បានបង់ប្រាក់'}}  </td>
+    <td> {{student?.payment?.total}} </td>
+    <td>
+      <button (click)="selectedRow(student.id, student)"  type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create Payment</button>
+      <button class="btn btn-danger btn-sm" (click)="deletePayment(student.id)">Delete</button>
+      <button (click)="selectedRow(student.id, student)"  class="btn btn-danger btn-sm" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">History</button>
+
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <form [formGroup]="angForm" (ngSubmit)="createPayment()" novalidate>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">ចំនួនត្រូវបង់ប្រាក់</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+       <div class="mb-3">
+         <label for="exampleFormControlInput1" class="form-label">Total PAID</label>
+         <input [(ngModel)]="payment.total" formControlName="total" name="total" type="number" class="form-control" id="exampleFormControlInput1" placeholder="00" required>
+
+       </div>
+       <div *ngIf="angForm.controls['total'].invalid && (angForm.controls['total'].dirty || angForm.controls['total'].touched)" class="alert alert-danger">
+         <div *ngIf="angForm.controls['total'].errors.required">
+           Total is required.
+         </div>
+       </div>
+       <div class="mb-3">
+         <label for="exampleFormControlInput1" class="form-label">បង់មុន</label>
+         <input [(ngModel)]="payment.amount" formControlName="amount" name="amount" type="number" class="form-control" id="exampleFormControlInput2" placeholder="00" required>
+       </div>
+       <div *ngIf="angForm.controls['total'].invalid && (angForm.controls['total'].dirty || angForm.controls['total'].touched)" class="alert alert-danger">
+         <div *ngIf="angForm.controls['total'].errors.required">
+           Amount is required.
+         </div>
+       </div>
+       <div class="mb-3">
+         <label for="exampleFormControlTextarea1" class="form-label">NOTE</label>
+         <textarea [(ngModel)]="payment.note" formControlName="note" name="note"  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+       </div>
+
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!angForm.valid" (click)="createPayment()">CREATE</button>
+      </div>
+    </div>
+
+  </div>
+  </form>
+</div>
+
+
+
+<!--history-->
+
+
+<div class="modal fade modal-dialog modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ប្រវត្តបង់ប្រាក់</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Update At</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let payment of currentStudents?.payment.payment_history; let i  = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{payment.amount}}</td>
+            <td>{{payment.updated_at |  date: 'dd/MM/yyyy'}}</td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">print</button>
+      </div>
+    </div>
+  </div>
+</div>
+
