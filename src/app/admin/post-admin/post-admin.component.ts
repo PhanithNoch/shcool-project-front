@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
   templateUrl: './post-admin.component.html',
   styleUrls: ['./post-admin.component.css']
 })
- 
+
 
 
 export class PostAdminComponent implements OnInit {
@@ -71,14 +71,14 @@ export class PostAdminComponent implements OnInit {
           'Cancelled',
           'Your imaginary file is safe :)',
           'error'
-        )
+        );
       }
-    })
+    });
 }
 
-   
-  
 
 
- 
+
+
+
 }

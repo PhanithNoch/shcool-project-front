@@ -1,4 +1,3 @@
-
 <div class="row bg-info p-2">
   <div class="col-md-6">
     <h3>ការបង់ប្រាក់</h3>
@@ -8,7 +7,7 @@
   </div>
 </div>
 
-<table class="table">
+<table  class="table payment-table">
   <thead>
   <tr>
     <th scope="col">#</th>
@@ -98,31 +97,112 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">ប្រវត្តបង់ប្រាក់</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Receipt</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <table class="table">
-          <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Update At</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let payment of currentStudents?.payment.payment_history; let i  = index">
-            <th scope="row">{{i+1}}</th>
-            <td>{{payment.amount}}</td>
-            <td>{{payment.updated_at |  date: 'dd/MM/yyyy'}}</td>
-          </tr>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2">
+              <img
+                src="assets/logo/logo.jpeg"
+                alt="logotipo"
+                class="logotipo" style="width: 50%;">
+            </div>
+            <div class="col-md-10">
+              <h3>
+                TEEN CHALLENGE OF CAMBODIA
+              </h3>
+              <p>
+                #37, street 16 Toeuk thla Sen sok, Phnom Penh, Cambodia |    Tel: (855) 23-880324
+              </p>
+              <p>
 
-          </tbody>
-        </table>
+              </p>
+              <p>
+                Web: tccambodia.com |      E-mail: cambodiatcchalenge@gmail.com
+              </p>
+
+
+            </div>
+            </div>
+
+ <div class="container">
+   <div class="row">
+     <div class="col-md-6">
+       <div class="row no-gutters">
+         <div class="col-3 label">
+           <p>Customer:</p>
+           <p>Contact:</p>
+
+         </div>
+
+         <div class="col-9">
+           <p>{{currentStudents?.fullname}}</p>
+           <p>{{currentStudents?.phone}}</p>
+
+
+         </div>
+       </div>
+
+     </div>
+
+     <div class="col-md-6">
+       <div class="row no-gutters">
+         <div class="col-3 label">
+
+           <p>អ្នកទទួល:</p>
+           <p>Total PAID:</p>
+         </div>
+
+         <div class="col-9">
+
+           <p>{{user?.name}}</p>
+           <p>{{currentStudents?.payment?.total}}</p>
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="row">
+
+     <table class="table">
+       <thead>
+       <tr>
+         <th scope="col">#</th>
+         <th scope="col">ឈ្មោះ</th>
+         <th scope="col">Amount</th>
+         <th scope="col">បង់មុន</th>
+         <th scope="col">Update At</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor="let payment of currentStudents?.payment.payment_history; let i  = index">
+         <th scope="row">{{i+1}}</th>
+         <td>{{currentStudents?.fullname}}</td>
+         <td>{{payment?.amount}}</td>
+         <td>{{payment?.amount}}</td>
+         <td>{{payment?.updated_at |  date: 'dd/MM/yyyy'}}</td>
+       </tr>
+
+       </tbody>
+     </table>
+   </div>
+
+
+
+ </div>
+
+
+
+        </div>
+
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">print</button>
+        <button type="button" class="btn btn-secondary no-print" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary no-print" (click)="printPage()">print</button>
       </div>
     </div>
   </div>

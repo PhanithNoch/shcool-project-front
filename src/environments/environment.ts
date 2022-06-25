@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
+  // baseUrl: 'https://tccambodia.herokuapp.com/api/',
+  // showImage: 'https://tccambodia.herokuapp.com/api/'
   baseUrl: 'http://127.0.0.1:8000/api/',
-  showImage:'http://127.0.0.1:8000/storage/'
+  showImage: 'http://127.0.0.1:8000/storage/'
 };
 
 /*

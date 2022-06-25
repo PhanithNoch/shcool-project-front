@@ -45,6 +45,7 @@ const routes: Routes = [
 
   {
     path: 'admin', component: HomeAdminComponent, canActivate: [AfterLoginService],
+    // path: 'admin', component: HomeAdminComponent,
     children: [
       {
         path: '', redirectTo: 'student-list', pathMatch: 'full'

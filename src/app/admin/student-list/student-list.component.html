@@ -22,16 +22,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of students" (click)="rowClick(student.id)">
+      <tr *ngFor="let student of students" >
         <th scope="row">1</th>
-        <td>{{student.fullname}}</td>
-        <td>{{student.sex}}</td>
-        <td>{{student.dob}}</td>
-        <td>{{student.id_number}}</td>
+        <td><a [routerLink]="['/admin/student-upsert',student.id]" >{{student?.fullname}}</a></td>
+        <td>{{student?.sex}}</td>
+        <td>{{student?.dob}}</td>
+        <td>{{student?.id_number}}</td>
         <td>{{student.phone}}</td>
-        <td class="truncate" >{{student.address}}</td>
+        <td class="truncate" >{{student?.address}}</td>
         <td>
-            <button class="btn btn-danger btn-sm">Delete</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.id)">Delete</button>
         </td>
 
       </tr>

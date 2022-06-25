@@ -22,28 +22,13 @@ export class PaymentComponent implements OnInit {
   public  paymentHistory: any
     = {};
   angForm: FormGroup;
-
+  printPage() {
+    window.print();
+  }
   constructor(private http: HttpClient, private router: Router, private userService: TokenService, private fb: FormBuilder) {
     this.createForm();
   }
-  mytodos = [
-    {
-      item:'need to buy movie tickets',
-      isCompleted:false
-    },
-    {
-      item:'Gardening tomorrow 9:00AM',
-      isCompleted:false
-    },
-    {
-      item:'Car Washing',
-      isCompleted:true
-    },
-    {
-      item:'Buy a pen',
-      isCompleted:false
-    }
-  ];
+
   createForm() {
     this.angForm = this.fb.group({
       total: ['', Validators.required ],
