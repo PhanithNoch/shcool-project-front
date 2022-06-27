@@ -11,25 +11,23 @@ import Swal from 'sweetalert2';
   styleUrls: ['./student-upsert.component.css']
 })
 export class StudentUpsertComponent implements OnInit {
-form:NgForm;
-  public student:any = {
-  
-  };
-  constructor(private http:HttpClient,private activateRoute:ActivatedRoute) { }
+form: NgForm;
+  public student: any = {};
+  constructor(private http: HttpClient,private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activateRoute.params.subscribe((res=>{
+    this.activateRoute.params.subscribe((res =>{
       if(res.id != null){
         this.getStudent(res.id);
       }
-  
+
     }));
-    console.log('activateRoute',)
+    console.log('activateRoute',);
   }
 
   onSubmit(f: NgForm) {
     console.log('student,',f.value.sex);
-    console.log('criminals_with,',f.value.criminals_with);
+    console.log('criminals_with,', f.value.criminals_with);
     console.log(f.value.fullname);  // { first: '', last: '' }
     console.log(f.valid);  // false
     this.http.post(environment.baseUrl + 'students',f.value).subscribe({
@@ -47,8 +45,8 @@ form:NgForm;
     .subscribe((res:any)=>{
       console.log(res);
       this.student = res.data;
-   
- 
+
+
     },
     error => {
       Swal.fire(

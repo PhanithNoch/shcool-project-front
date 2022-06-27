@@ -29,6 +29,7 @@ import {HealthComponent} from './admin/health/health.component';
 import {HealthUpsertComponent} from './admin/health-upsert/health-upsert.component';
 import {GreetingsComponent} from './admin/greetings/greetings.component';
 import {BudgetlistComponent} from './admin/budgetlist/budgetlist.component';
+import {HealthDetailsComponent} from './admin/health-details/health-details.component';
 
 const routes: Routes = [
   {path: '', component: WebsiteHomeComponent},
@@ -105,6 +106,9 @@ const routes: Routes = [
       },
       {
         path: 'health', component: HealthComponent
+      },
+      {
+        path: 'health-details/:id', component: HealthDetailsComponent
       },
       {
         path: 'health-upsert/:id', component: HealthUpsertComponent

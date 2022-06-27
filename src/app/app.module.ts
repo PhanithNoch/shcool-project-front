@@ -42,6 +42,7 @@ import {GreetingsComponent} from './admin/greetings/greetings.component';
 import {HealthUpsertComponent} from './admin/health-upsert/health-upsert.component';
 import { PrintReceiptComponent } from './admin/print-receipt/print-receipt.component';
 import {NgxPrintModule} from 'ngx-print';
+import { HealthDetailsComponent } from './admin/health-details/health-details.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import {NgxPrintModule} from 'ngx-print';
     GreetingsComponent,
     BudgetlistComponent,
     PrintReceiptComponent,
+    HealthDetailsComponent,
 
   ],
   imports: [
