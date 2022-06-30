@@ -1,125 +1,104 @@
-<div class="container">
+<div class="row mt-3">
+  <div class="col-md-6 ">
+    <h3 class="text-center float-start">របាយការណ៍ការមកសួរសុខទុក្ខ</h3>
+  </div>
+  <div class="col-md-6 ">
+    <h3 class="text-center">
+      <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">បង្កើតថ្មី</button>
+    </h3>
+  </div>
+  </div>
 
-<div class="row">
-  <div class="col-8 ">
-    <h3 class="text-center mt-3 ">របាយការណ៍ការមកសួរសុខទុក្ខ</h3>
-  </div>
-  <div class="col-4">
-    <!-- Button trigger modal -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      បង្កើត
-    </button>
-  </div>
-</div>
-  <table class="table table-bordered">
+
+
+  <table class="table">
     <thead>
     <tr>
-      <th scope="col">ល.រ</th>
-      <th scope="col">កាលបរិច្ឆេទ</th>
-      <th scope="col">ឈ្មោះអ្នកមកសួរសុខទុក្ខ</th>
-      <th scope="col">លេខទូរសព្ទ័</th>
-      <th scope="col">ទំនាក់ទំនងជា</th>
-      <th scope="col">ម៉ោងចូល</th>
-      <th scope="col">ម៉ោងចេញ</th>
-      <th scope="col">ផ្សេងៗ</th>
-      <th scope="col">សកម្មភាព</th>
+      <th scope="col">#</th>
+      <th scope="col">ឈ្មោះ</th>
+      <th scope="col">ភេទ</th>
+      <th scope="col">ថ្ងៃខែឆ្នាំកំណើត</th>
+      <th scope="col">អត្តសញ្ញាត្តិបណ្ឌលេខ</th>
+      <th scope="col">លេខទួរសព្ទ</th>
+      <th scope="col">អាស័យដ្ឋាន</th>
+      <th scope="col">Actions</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
+    <tr *ngFor="let student of students" >
       <th scope="row">1</th>
-      <td>1/4/2022</td>
-      <td>example1</td>
-      <td>example2</td>
-      <td>example1</td>
-      <td>example1</td>
-      <td>example2</td>
-      <td>example2</td>
-      <td class="">
-        <button type="button" class="btn btn-success ">កែប្រែ</button>
-        <button type="button" class="btn btn-danger ml-2">លុប</button>
+      <td><a [routerLink]="['/admin/greetings-details',student.id]" >{{student?.fullname}}</a></td>
+      <td>{{student?.sex}}</td>
+      <td>{{student?.dob}}</td>
+      <td>{{student?.id_number}}</td>
+      <td>{{student.phone}}</td>
+      <td class="truncate" >{{student?.address}}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.id)">Delete</button>
       </td>
 
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>2/5/2021</td>
-      <td>example2</td>
-      <td>example2</td>
-      <td>example2</td>
-      <td>example2</td>
-      <td>example2</td>
-      <td>example2</td>
-      <td class="">
-        <button type="button" class="btn btn-success ">កែប្រែ</button>
-        <button type="button" class="btn btn-danger ml-2">លុប</button>
-      </td>
     </tr>
 
     </tbody>
   </table>
-</div>
 
 
-
-
-<!-- Modal -->
-<div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">បង្កើតមកសួរសុខទុក្ខ</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">កាលបរិច្ឆេទ</label>
-            <input type="date" class="form-control" >
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">ឈ្មោះអ្នកមកសួរសុខទុក្ខ</label>
-            <input type="value" class="form-control"  placeholder="ឈ្មោះអ្នកមកសួរសុខទុក្ខ">
-          </div>
-
-          <div class="row">
-            <div class="col-6">
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">លេខទូរសព្ទ័</label>
-                <input type="value" class="form-control"  placeholder="លេខទូរសព្ទ័">
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" >បំពេញរបាយការណ៍</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">កាលបរិច្ឆេទ</label>
+              <input type="date" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">ឈ្មោះសិស្ស</label>
+              <input type="value" class="form-control" >
+            </div>
+            <div class="form-group">
+              <label  class="col-form-label">ការពីពណ៍នាជម្ងឺ</label>
+              <textarea class="form-control" ></textarea>
+            </div>
+            <div class="form-group">
+              <label  class="col-form-label">ពេទ្យណា</label>
+              <textarea class="form-control" ></textarea>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">អ្នកជូនទៅ</label>
+                  <input type="value" class="form-control" >
+                </div>
               </div>
-            </div>
-            <div class="col-6">
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">ទំនាក់ទំនងជា</label>
-                <input type="value" class="form-control"  placeholder="ទំនាក់ទំនងជា">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">អ្នកចំណាយ</label>
+                  <input type="value" class="form-control" >
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <label for="recipient-name" class="col-form-label">ម៉ោងចូល</label>
-              <input type="value" class="form-control"  placeholder="ម៉ោងចូល">
-            </div>
-            <div class="col-6">
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">ម៉ោងចេញ</label>
-                <input type="value" class="form-control" placeholder="ម៉ោងចេញ">
-              </div>
-            </div>
 
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">ផ្សេងៗ</label>
-            <textarea class="form-control" ></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            <div class="form-group">
+              <label  class="col-form-label">ផ្សេងៗ</label>
+              <textarea class="form-control" ></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">បិទ</button>
+          <button type="button" class="btn btn-primary">រក្សាទុក</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+
+
+
