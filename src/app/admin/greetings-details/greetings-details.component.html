@@ -1,0 +1,111 @@
+<div class="row m-3 ">
+  <div class="col-md-6 ">
+    <h3 class="text-center float-start">របាយការណ៍ការមកសួរសុខទុក្ខ</h3>
+  </div>
+  <div class="col-md-6 ">
+
+    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      បង្កើត
+    </button>
+  </div>
+</div>
+
+<div class="container">
+
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">ល.រ</th>
+      <th scope="col">កាលបរិច្ឆេទ</th>
+      <th scope="col">ឈ្មោះអ្នកមកសួរសុខទុក្ខ</th>
+      <th scope="col">លេខទូរសព្ទ័</th>
+      <th scope="col">ទំនាក់ទំនងជា</th>
+      <th scope="col">ម៉ោងចូល</th>
+      <th scope="col">ម៉ោងចេញ</th>
+      <th scope="col">ផ្សេងៗ</th>
+      <th scope="col">សកម្មភាព</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let visitor of visit">
+      <th scope="row">1</th>
+      <td>{{visitor.updated_at | date}}</td>
+      <td>{{visitor.visitor_name}}</td>
+      <td>{{visitor.phone}}</td>
+      <td>{{visitor.relationship}}</td>
+      <td>{{visitor.time_in}}</td>
+      <td>{{visitor.time_out}}</td>
+      <td>{{visitor.note}}</td>
+      <td class="">
+        <button type="button" class="btn btn-success ">កែប្រែ</button>
+        <button type="button" (click)="delete(visitor.id)" class="btn btn-danger ml-2">លុប</button>
+      </td>
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">បង្កើតមកសួរសុខទុក្ខ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">កាលបរិច្ឆេទ</label>
+            <input type="date" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">ឈ្មោះអ្នកមកសួរសុខទុក្ខ</label>
+            <input type="value" class="form-control"  placeholder="ឈ្មោះអ្នកមកសួរសុខទុក្ខ">
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">លេខទូរសព្ទ័</label>
+                <input type="value" class="form-control"  placeholder="លេខទូរសព្ទ័">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">ទំនាក់ទំនងជា</label>
+                <input type="value" class="form-control"  placeholder="ទំនាក់ទំនងជា">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <label for="recipient-name" class="col-form-label">ម៉ោងចូល</label>
+              <input type="value" class="form-control"  placeholder="ម៉ោងចូល">
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">ម៉ោងចេញ</label>
+                <input type="value" class="form-control" placeholder="ម៉ោងចេញ">
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">ផ្សេងៗ</label>
+            <textarea class="form-control" ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
