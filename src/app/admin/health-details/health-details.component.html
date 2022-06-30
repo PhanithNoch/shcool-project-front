@@ -1,46 +1,101 @@
-
-<div class="row bg-info p-2">
+{{health.payer_name}}
+<div class="row bg-info p-2 rounded ">
   <div class="col-md-6">
     <h3>របាយការណ៍សុខភាព</h3>
   </div>
   <div class="col-md-6">
-    <button  class="btn btn-sm btn-primary float-end align-middle">Create</button>
+    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">បង្កើតថ្មី</button>
   </div>
 </div>
 
+<div class="mt-2"></div>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">ល.រ</th>
 
-<div class="container-md mt-3">
-  <table class="table table-bordered">
-    <thead>
-    <tr>
-      <th scope="col">ល.រ</th>
+    <th scope="col">ឈ្មោះសិស្ស</th>
+    <th scope="col">ការពីពណ៍នាជម្ងឺ</th>
+    <th scope="col">ពេទ្យណា</th>
+    <th scope="col">អ្នកជូនទៅ</th>
+    <th scope="col">អ្នកចំណាយ</th>
+    <th scope="col">ផ្សេងៗ</th>
+    <th scope="col">កាលបរិច្ឆេទ</th>
 
-      <th scope="col">ឈ្មោះសិស្ស</th>
-      <th scope="col">ការពីពណ៍នាជម្ងឺ</th>
-      <th scope="col">ពេទ្យណា</th>
-      <th scope="col">អ្នកជូនទៅ</th>
-      <th scope="col">អ្នកចំណាយ</th>
-      <th scope="col">ផ្សេងៗ</th>
-      <th scope="col">កាលបរិច្ឆេទ</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of students;let i = index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{studentObj.fullname}}</td>
+    <td>{{student?.health_desc}}</td>
+    <td>{{student?.doctor_name}}</td>
+    <td>{{student?.payer_name}}</td>
+    <td>{{student?.bring_nane}}</td>
+    <td>{{student?.updated_at | date }}</td>
+    <td class="">
+      <button type="button" (click)="onEdit(student)" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop">កែប្រែ</button>
+      <button (click)="delete(student.id)" type="button" class="btn btn-danger ml-2">លុប</button>
+    </td>
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let student of students;let i = index">
-      <th scope="row">{{i+1}}</th>
-      <td>{{studentObj.fullname}}</td>
-      <td>{{student?.health_desc}}</td>
-      <td>{{student?.doctor_name}}</td>
-      <td>{{student?.payer_name}}</td>
-      <td>{{student?.bring_nane}}</td>
-      <td>{{student?.updated_at | date }}</td>
-      <td class="">
-        <button type="button" class="btn btn-success ">កែប្រែ</button>
-        <button (click)="delete(student.id)" type="button" class="btn btn-danger ml-2">លុប</button>
-      </td>
+  </tr>
 
-    </tr>
+  </tbody>
+</table>
+<!--modal -->
+<form #health = "ngForm" (ngSubmit)="onSubmit()">
+  <!-- Modal -->
+  <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
 
-    </tbody>
-  </table>
-</div>
+          <div class="form-group">
+            <label for="recipient" class="col-form-label">កាលបរិច្ឆេទ</label>
+            <input [(ngModel)]="health.date"  #date="ngModel" name="first" type="date" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">ឈ្មោះសិស្ស</label>
+            <input [(ngModel)]="health.student_name" ngModel #student_name="ngModel" name="student_name" type="value" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">ការពីពណ៍នាជម្ងឺ</label>
+            <textarea class="form-control" ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">ពេទ្យណា</label>
+            <textarea [(ngModel)]="health.doctor_name" name="doctor_name" class="form-control" ></textarea>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="recipient-2" class="col-form-label">អ្នកជូនទៅ</label>
+                <input [(ngModel)]="health.bring_nane" name="bring_nane"  type="value" class="form-control" >
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="recipient-1" class="col-form-label">អ្នកចំណាយ</label>
+                <input [value]="health.payer_name" name="payer_name"  type="value" class="form-control" >
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">ផ្សេងៗ</label>
+            <textarea class="form-control" ></textarea>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

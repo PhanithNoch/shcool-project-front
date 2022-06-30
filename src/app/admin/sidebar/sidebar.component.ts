@@ -10,6 +10,8 @@ import { TokenService } from 'src/app/shared/services/token.service';
 })
 export class SidebarComponent implements OnInit {
 
+  isAdmin:boolean = false;
+
   constructor(
     private guard:AuthGuardService,
     private tokenService:TokenService,
@@ -17,14 +19,24 @@ export class SidebarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getUserInfo();
   }
 
   signOut(){
+
     this.tokenService.remove()
-    this.guard.changeAuthStatus(false)
-    //signout 
-    this.router.navigateByUrl('/login')
-    
+    this.guard.changeAuthStatus(false);
+    //signout
+    this.router.navigateByUrl('/login');
+
+  }
+
+  getUserInfo(){
+    let user = this.tokenService.getUserInfo();
+    if(user.type === 'ADMIN'){
+      this.isAdmin = true;
+    }
+    console.log('user',user);
   }
 
 }

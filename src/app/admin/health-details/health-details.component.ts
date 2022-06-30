@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import Swal from 'sweetalert2';
@@ -14,6 +14,13 @@ export class HealthDetailsComponent implements OnInit {
   students: any;
   studentObj: any;
   id: string;
+ health: any = {
+    health_desc:'test',
+    doctor_name:'test',
+    payer_name: 'test',
+    bring_nane:'test',
+    student_id: 1
+  };
   constructor(private http: HttpClient, private router: Router, private  tokenService: TokenService, private  activateRoute: ActivatedRoute) {
   }
 
@@ -67,7 +74,7 @@ export class HealthDetailsComponent implements OnInit {
         this.http.delete(environment.baseUrl + 'auth/healths/' + id)
           .subscribe((res: any) => {
               console.log(this.id);
-              this.getHealthWhere(id);
+              this.getHealthWhere(this.id);
             },
             error => console.log(error)
           );
@@ -82,5 +89,37 @@ export class HealthDetailsComponent implements OnInit {
       }
     });
   }
-
+  onSubmit(): void {
+    const token = this.tokenService.get();
+    const header = new HttpHeaders().set(
+      'Authorization',
+      'Bearer' + token
+    );
+    this.health.student_id = this.id;
+    console.log('health',this.health);
+    this.http.post(environment.baseUrl + 'auth/healths', this.health, {headers: header})
+      .subscribe((res: any) => {
+          this.students = res.data;
+          this.getHealthWhere(this.id);
+          // this.lstHealth = this.students.health;
+          Swal.fire(
+            'The Internet?',
+            'Created Successfully',
+            'success'
+          );
+        },
+        error => {
+          Swal.fire(
+            'The Internet?',
+            error.message,
+            'error'
+          );
+        }
+      );
+  }
+  onEdit(health: any){
+    console.log('heath',health);
+    // this.health.health_desc = health.health_desc;
+    // this.health.payer_name = health.payer_name;
+  }
 }

@@ -40,12 +40,9 @@ export class HealthComponent implements OnInit {
 
     this.http.get(environment.baseUrl + 'students', {headers: header})
       .subscribe((res: any) => {
-
           this.students = res.data;
           console.log('student', this.students);
 
-
-
         },
         error => {
           Swal.fire(
@@ -57,32 +54,7 @@ export class HealthComponent implements OnInit {
       );
   }
 
-  onSubmit(){
-    console.log('form',this.health);
-    const token = this.tokenService.get();
-    const header = new HttpHeaders().set(
-      'Authorization',
-      'Bearer' + token
-    );
-    this.http.post(environment.baseUrl + 'auth/healths', this.health, {headers: header})
-      .subscribe((res: any) => {
-          this.students = res.data;
-          this.lstHealth = this.students.health;
-          Swal.fire(
-            'The Internet?',
-            'Created Successfully',
-            'success'
-          );
-        },
-        error => {
-          Swal.fire(
-            'The Internet?',
-            error.message,
-            'error'
-          );
-        }
-      );
-  }
+
 
 
 }
