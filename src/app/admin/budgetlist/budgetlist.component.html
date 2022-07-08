@@ -24,7 +24,7 @@
   <tbody>
   <tr *ngFor="let student of students" >
     <th scope="row">1</th>
-    <td><a [routerLink]="['/admin/student-upsert',student.id]" >{{student?.fullname}}</a></td>
+    <td><a [routerLink]="['/admin/budget-details',student.id]" >{{student?.fullname}}</a></td>
     <td>{{student?.sex}}</td>
     <td>{{student?.dob}}</td>
     <td>{{student?.id_number}}</td>
@@ -38,4 +38,6 @@
 
   </tbody>
 </table>
+
+
 

@@ -1,20 +1,27 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {TokenService} from '../../shared/services/token.service';
 import {environment} from '../../../environments/environment';
 import Swal from 'sweetalert2';
-import {TokenService} from '../../shared/services/token.service';
 
 @Component({
-  selector: 'app-budgetlist',
-  templateUrl: './budgetlist.component.html',
-  styleUrls: ['./budgetlist.component.css']
+  selector: 'app-budget-details',
+  templateUrl: './budget-details.component.html',
+  styleUrls: ['./budget-details.component.css']
 })
-export class BudgetlistComponent implements OnInit {
+export class BudgetDetailsComponent implements OnInit {
 
-  public students: any;
+  public budgets: any;
+  public budget: any = {
+    income: '1',
+    pay: '20',
+    balance: '200',
+    buy: 'MILK',
+    student_id: 1
+  };
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
@@ -22,11 +29,10 @@ export class BudgetlistComponent implements OnInit {
   }
 
 
-  // tslint:disable-next-line:typedef
-  getStudents() {
-    this.http.get(environment.baseUrl + 'students')
+  getStudents(): void {
+    this.http.get(environment.baseUrl + 'auth/student_payment_income')
       .subscribe((res: any) => {
-          this.students = res.data;
+          this.budgets = res.data;
         },
         error => {
           Swal.fire(
@@ -38,7 +44,7 @@ export class BudgetlistComponent implements OnInit {
       );
   }
 
-  deleteStudent(id: any): void{
+  deleteStudent(id: any): void {
     Swal.fire({
       title: 'Are you sure?',
       text: 'You will not be able to recover this imaginary file!',
@@ -70,6 +76,36 @@ export class BudgetlistComponent implements OnInit {
         );
       }
     });
+  }
+
+  // rowClick(id){
+  //   this.router.navigate(['/admin/student-upsert',id])
+  // }
+  onSubmit(): void {
+    const token = this.tokenService.get();
+    const header = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + token
+    );
+    // return;
+    // this.greeting.student_id = Number(this.id);
+    this.http.post(environment.baseUrl + 'auth/student_payment_income', this.budget, {headers: header})
+      .subscribe((res: any) => {
+          // this.lstHealth = this.students.health;
+          Swal.fire(
+            'The Internet?',
+            'Created Successfully',
+            'success'
+          );
+        },
+        error => {
+          Swal.fire(
+            'The Internet?',
+            error.message,
+            'error'
+          );
+        }
+      );
   }
 
 }

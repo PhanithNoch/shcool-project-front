@@ -1,0 +1,118 @@
+
+<div class="row mt-3 mb-3">
+  <div class="col-md-6 ">
+    <h3 class="float-start">បញ្ចីចំណូល ចំណាយរបស់សិស្ស</h3>
+  </div>
+  <div class="col-md-6">
+    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">បង្កើតថ្មី
+    </button>
+  </div>
+
+
+</div>
+
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+
+    <th scope="col">ឈ្មោះ</th>
+    <th scope="col">ចំណូល</th>
+    <th scope="col">ចំណាយ</th>
+    <th scope="col">សមតុល្យ</th>
+    <th scope="col">ទិញ</th>
+    <!--      <th scope="col">ផ្សេងៗ</th>-->
+    <!--      <th scope="col">សកម្មភាព</th>-->
+    <th scope="col">កាលបរិច្ឆេទ</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let budget of budgets">
+
+    <td> {{budget.fullname}}</td>
+    <td>{{budget.income}}</td>
+    <td>{{budget.pay}}</td>
+    <td>{{budget.balance}}</td>
+    <td>{{budget.buy}}</td>
+    <td>{{budget.created_at | date}}</td>
+
+    <td class="">
+      <!--        <button type="button" class="btn btn-success ">កែប្រែ</button>-->
+      <button type="button" class="btn btn-danger ml-2">លុប</button>
+    </td>
+
+  </tr>
+
+
+  </tbody>
+</table>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">បង្កើតថ្មី</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #form = "ngForm" (ngSubmit)="onSubmit()">
+          <!--        <div class="form-group">-->
+          <!--          <label for="recipient-name" class="col-form-label">កាលបរិច្ឆេទ</label>-->
+          <!--          <input type="date" class="form-control" id="recipient-name">-->
+          <!--        </div>-->
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">ឈ្មោះ</label>
+            <input type="text" disabled="true" [value]="budgets[0].fullname" class="form-control" id="recipient-name1" placeholder="ឈ្មោះ">
+
+
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">ចំណូល</label>
+                  <input type="value" class="form-control" id="recipient-name2" placeholder="ចំណូល">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">ចំណាយ</label>
+                  <input type="value" class="form-control" id="recipient-name3" placeholder="ចំណាយ">
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">សមតុល្យ</label>
+                  <input type="value" class="form-control" id="recipient-name4" placeholder="សមតុល្យ">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">ទិញ</label>
+                  <input type="value" class="form-control" id="recipient-name5" placeholder="ទិញ">
+                </div>
+              </div>
+
+            </div>
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label">ផ្សេងៗ</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">បិទ</button>
+            <button type="button" class="btn btn-primary">រក្សាទុក</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

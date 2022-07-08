@@ -1,4 +1,4 @@
-<div class="row m-3 ">
+<div class="row mt-3 mb-3">
   <div class="col-md-6 ">
     <h3 class="text-center float-start">របាយការណ៍ការមកសួរសុខទុក្ខ</h3>
   </div>
@@ -9,42 +9,39 @@
   </div>
 </div>
 
-<div class="container">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">ល.រ</th>
+    <th scope="col">កាលបរិច្ឆេទ</th>
+    <th scope="col">ឈ្មោះអ្នកមកសួរសុខទុក្ខ</th>
+    <th scope="col">លេខទូរសព្ទ័</th>
+    <th scope="col">ទំនាក់ទំនងជា</th>
+    <th scope="col">ម៉ោងចូល</th>
+    <th scope="col">ម៉ោងចេញ</th>
+    <th scope="col">ផ្សេងៗ</th>
+    <th scope="col">សកម្មភាព</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let visitor of visit">
+    <th scope="row">1</th>
+    <td>{{visitor.updated_at | date}}</td>
+    <td>{{visitor.visitor_name}}</td>
+    <td>{{visitor.phone}}</td>
+    <td>{{visitor.relationship}}</td>
+    <td>{{visitor.time_in}}</td>
+    <td>{{visitor.time_out}}</td>
+    <td>{{visitor.note}}</td>
+    <td class="">
+<!--      <button type="button" class="btn btn-success ">កែប្រែ</button>-->
+      <button type="button" (click)="delete(visitor.id)" class="btn btn-danger ml-2">លុប</button>
+    </td>
 
-  <table class="table table-bordered">
-    <thead>
-    <tr>
-      <th scope="col">ល.រ</th>
-      <th scope="col">កាលបរិច្ឆេទ</th>
-      <th scope="col">ឈ្មោះអ្នកមកសួរសុខទុក្ខ</th>
-      <th scope="col">លេខទូរសព្ទ័</th>
-      <th scope="col">ទំនាក់ទំនងជា</th>
-      <th scope="col">ម៉ោងចូល</th>
-      <th scope="col">ម៉ោងចេញ</th>
-      <th scope="col">ផ្សេងៗ</th>
-      <th scope="col">សកម្មភាព</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let visitor of visit">
-      <th scope="row">1</th>
-      <td>{{visitor.updated_at | date}}</td>
-      <td>{{visitor.visitor_name}}</td>
-      <td>{{visitor.phone}}</td>
-      <td>{{visitor.relationship}}</td>
-      <td>{{visitor.time_in}}</td>
-      <td>{{visitor.time_out}}</td>
-      <td>{{visitor.note}}</td>
-      <td class="">
-        <button type="button" class="btn btn-success ">កែប្រែ</button>
-        <button type="button" (click)="delete(visitor.id)" class="btn btn-danger ml-2">លុប</button>
-      </td>
+  </tr>
 
-    </tr>
-
-    </tbody>
-  </table>
-</div>
+  </tbody>
+</table>
 
 
 

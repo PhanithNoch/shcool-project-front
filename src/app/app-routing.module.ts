@@ -31,6 +31,7 @@ import {GreetingsComponent} from './admin/greetings/greetings.component';
 import {BudgetlistComponent} from './admin/budgetlist/budgetlist.component';
 import {HealthDetailsComponent} from './admin/health-details/health-details.component';
 import {GreetingsDetailsComponent} from './admin/greetings-details/greetings-details.component';
+import {BudgetDetailsComponent} from "./admin/budget-details/budget-details.component";
 
 const routes: Routes = [
   {path: '', component: WebsiteHomeComponent},
@@ -125,7 +126,9 @@ const routes: Routes = [
       {
         path: 'budgetlist', component: BudgetlistComponent
       },
-
+      {
+        path: 'budget-details/:id', component: BudgetDetailsComponent
+      },
       // {
       //   path: 'product', component: ProductComponent,
       // },
