@@ -11,11 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./greetings.component.css']
 })
 export class GreetingsComponent implements OnInit {
-
-
   students: any;
-
-
   constructor(private http: HttpClient, private router: Router, private  tokenService: TokenService) {
   }
 
@@ -46,7 +42,9 @@ export class GreetingsComponent implements OnInit {
         }
       );
   }
+  onSubmit(){
 
+  }
 
 
 
