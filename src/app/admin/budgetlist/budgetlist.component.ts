@@ -11,6 +11,7 @@ import {TokenService} from '../../shared/services/token.service';
   styleUrls: ['./budgetlist.component.css']
 })
 export class BudgetlistComponent implements OnInit {
+  public loading = false;
 
   public students: any;
 
@@ -18,6 +19,7 @@ export class BudgetlistComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getStudents();
   }
 
@@ -26,9 +28,15 @@ export class BudgetlistComponent implements OnInit {
   getStudents() {
     this.http.get(environment.baseUrl + 'students')
       .subscribe((res: any) => {
+          setTimeout(() => {
+            this.loading = false;
+          }, 700);
           this.students = res.data;
         },
         error => {
+          setTimeout(() => {
+            this.loading = false;
+          }, 700);
           Swal.fire(
             'The Internet?',
             error.message,

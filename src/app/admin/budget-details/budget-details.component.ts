@@ -14,10 +14,10 @@ export class BudgetDetailsComponent implements OnInit {
 
   public budgets: any;
   public budget: any = {
-    income: '1',
-    pay: '20',
-    balance: '200',
-    buy: 'MILK',
+    income: null,
+    pay: null,
+    balance: null,
+    buy: null,
     student_id: 1
   };
 
@@ -93,10 +93,14 @@ export class BudgetDetailsComponent implements OnInit {
       .subscribe((res: any) => {
           // this.lstHealth = this.students.health;
           Swal.fire(
-            'The Internet?',
+            'The Internet',
             'Created Successfully',
             'success'
           );
+          this.getStudents();
+
+
+          this.budget = {};
         },
         error => {
           Swal.fire(
@@ -107,5 +111,15 @@ export class BudgetDetailsComponent implements OnInit {
         }
       );
   }
+  hideModal() : void {
+    const elem = document.getElementById('submitBtn');
 
+    const evt = new MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+      view: window
+    });
+
+    elem.dispatchEvent(evt);
+  }
 }

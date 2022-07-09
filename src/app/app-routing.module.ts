@@ -32,6 +32,8 @@ import {BudgetlistComponent} from './admin/budgetlist/budgetlist.component';
 import {HealthDetailsComponent} from './admin/health-details/health-details.component';
 import {GreetingsDetailsComponent} from './admin/greetings-details/greetings-details.component';
 import {BudgetDetailsComponent} from "./admin/budget-details/budget-details.component";
+import {PlanDetailsComponent} from './admin/plan-details/plan-details.component';
+import {InterviewDetailsComponent} from './admin/interview-details/interview-details.component';
 
 const routes: Routes = [
   {path: '', component: WebsiteHomeComponent},
@@ -87,6 +89,9 @@ const routes: Routes = [
         path: 'plans', component: PlanComponent,
       },
       {
+        path: 'plans-details/:id', component: PlanDetailsComponent,
+      },
+      {
         path: 'plans-upsert/:id', component: PlanUpsertComponent
       },
 
@@ -105,6 +110,9 @@ const routes: Routes = [
       },
       {
         path: 'interview-upsert/:id', component: InterviewUpsertComponent
+      },
+      {
+        path: 'interview-details/:id', component: InterviewDetailsComponent
       },
       {
         path: 'health', component: HealthComponent

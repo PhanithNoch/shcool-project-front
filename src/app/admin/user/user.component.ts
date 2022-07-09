@@ -20,8 +20,14 @@ export class UserComponent implements OnInit {
     name: null,
     email: null,
     password: null,
-    password_confirmation: null
+    password_confirmation: null,
+    type: null
   };
+  selectedType = '';
+
+  selectChangeHandler(event: any) {
+    this.selectedType = event.target.value;
+  }
 
   constructor(
     private auth: AuthService,
@@ -33,11 +39,19 @@ export class UserComponent implements OnInit {
   ) {
   }
 
+
   ngOnInit() {
+   let user =  this.tokenService.getUserInfo();
+    // tslint:disable-next-line:triple-equals
+   if(user.type != 'ADMIN'){
+     this.router.navigateByUrl('/admin/student-list');
+   }
+   console.log('user',user);
     this.getAllUsers();
   }
 
   onSubmit() {
+    this.form.type = this.selectedType;
     console.log(this.form);
     this.auth.signup(this.form).subscribe(
       res => this.handleResponse(res)

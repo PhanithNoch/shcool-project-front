@@ -5,7 +5,6 @@
 
     </div>
     <div class="col-md-6">
-      <button (click)="onSubmit()" type="button" class="btn btn-primary  float-end">រក្សាទុក</button>
 
     </div>
   </div>
@@ -16,51 +15,51 @@
     <div class="col-6">
       <form>
         <label >ឈ្មោះអតិថិជន</label>
-        <input [(ngModel)]="interview.customer_name" name="customer_name" type="text" class="form-control" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
+        <input disabled [(ngModel)]="interview.customer_name" name="customer_name" type="text" class="form-control" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
       </form>
     </div>
     <div class="col-6">
       <form>
         <label >កាលបរិច្ឆេទ</label>
-        <input type="date" name="customer_name" class="form-control"  aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+        <input disabled [value]="interview.created_at | date:'yyyy-MM-dd'"  type="date" name="customer_name" class="form-control"  aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
       </form>
     </div>
   </div>
   <div class="mt-2">
     <label class="">អ្នកកាន់ករណី</label>
-    <textarea name="holder_name" [(ngModel)]="interview.holder_name" class="form-control" aria-label="With textarea"></textarea>
+    <textarea disabled name="holder_name" [(ngModel)]="interview.holder_name" class="form-control" aria-label="With textarea"></textarea>
   </div>
   <div class="mt-2">
     <label class="">អ្នកចូលរួម</label>
-    <textarea [(ngModel)]="interview.joiner_name"  name="joiner_name" class="form-control" aria-label="With textarea"></textarea>
+    <textarea disabled [(ngModel)]="interview.joiner_name"  name="joiner_name" class="form-control" aria-label="With textarea"></textarea>
   </div>
   <div class="mt-2">
     <label class="">ទីកន្លែង</label>
-    <textarea [(ngModel)]="interview.place"  name="place"  class="form-control" aria-label="With textarea"></textarea>
+    <textarea disabled [(ngModel)]="interview.place"  name="place"  class="form-control" aria-label="With textarea"></textarea>
   </div>
   <div class="mt-2">
     <label class=""  style="text-decoration-line: underline">១.ផែនការ</label>
-    <textarea [(ngModel)]="interview.plan"  name="plan"  class="form-control" aria-label="With textarea"></textarea>
+    <textarea disabled [(ngModel)]="interview.plan"  name="plan"  class="form-control" aria-label="With textarea"></textarea>
   </div>
   <div class="mt-2">
     <label class=""  style="text-decoration-line: underline">២.បញ្ហាដែលជួបប្រទះ</label>
-    <textarea [(ngModel)]="interview.desc_problem"  name="desc_problem"  class="form-control" aria-label="With textarea"></textarea>
+    <textarea disabled [(ngModel)]="interview.desc_problem"  name="desc_problem"  class="form-control" aria-label="With textarea"></textarea>
   </div>
   <div class="mt-2">
     <label class=""  style="text-decoration-line: underline">៣.ព័ត៌មានដែលសំខាន់ និងបញ្ហាថ្មីៗ</label>
-    <textarea [(ngModel)]="interview.update_problem"  name="update_problem"  class="form-control" aria-label="With textarea"></textarea>
+    <textarea disabled [(ngModel)]="interview.update_problem"  name="update_problem"  class="form-control" aria-label="With textarea"></textarea>
   </div>
   <div class="mt-2">
     <label class=""  style="text-decoration-line: underline">៤.ការធ្វើអន្តរាគមន៍</label>
-    <textarea [(ngModel)]="interview.intervention"  name="intervention"  class="form-control" aria-label="With textarea"></textarea>
+    <textarea disabled [(ngModel)]="interview.intervention"  name="intervention"  class="form-control" aria-label="With textarea"></textarea>
   </div>
   <div class="mt-2">
     <label class=""  style="text-decoration-line: underline">៥.ការប៉ានប្រមាណ</label>
-    <textarea [(ngModel)]="interview.estimation"  name="estimation"  class="form-control" aria-label="With textarea"></textarea>
+    <textarea disabled [(ngModel)]="interview.estimation"  name="estimation"  class="form-control" aria-label="With textarea"></textarea>
   </div>
   <div class="mt-2">
     <label class=""  style="text-decoration-line: underline">៦.ផែនការសកម្មភាពបន្ត</label>
-    <textarea [(ngModel)]="interview.continuing_plan"  name="continuing_plan"  class="form-control" aria-label="With textarea"></textarea>
+    <textarea disabled [(ngModel)]="interview.continuing_plan"  name="continuing_plan"  class="form-control" aria-label="With textarea"></textarea>
   </div>
 
 </div>

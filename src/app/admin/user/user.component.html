@@ -40,7 +40,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Please sign Up</h5>
+        <h5 class="modal-title" id="exampleModalLabel">បង្កើតអ្នកប្រើប្រាស់</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -48,10 +48,20 @@
           <main class="form-signin">
             <form #signUpForm = "ngForm" (ngSubmit)="onSubmit()">
 
-              <div class="mb-3">
+<!--              <p><span>You selected: </span><b>{{selectedType}}</b></p>-->
+<div class="mb-3">
+  <select (change)="selectChangeHandler($event)">
+    <option value="ADMIN">ADMIN</option>
+    <option value="USER">USER</option>
+
+  </select>
+</div>
+              <div class="row">
+              <div class="col-md-12 mb-3">
                 <input [(ngModel)]="form.name" name="name" type="text" class="form-control" id="floatingInput1"
                        placeholder="Full Name">
               </div>
+            </div>
               <div class="mb-3">
                 <input type="email" [(ngModel)]="form.email" name="email" class="form-control" id="floatingInput"
                        placeholder="name@example.com">
@@ -64,6 +74,7 @@
                 <input type="password" [(ngModel)]="form.password_confirmation" autocomplete="on" name="password_confirmation" class="form-control" id="floatingPassword"
                        placeholder="Password Confirmation">
               </div>
+
               <button class="w-100 btn btn-lg btn-primary btn-sm" type="submit">Sign in</button>
 
             </form>

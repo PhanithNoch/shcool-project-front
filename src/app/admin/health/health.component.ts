@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {environment} from '../../../environments/environment';
@@ -12,21 +12,23 @@ import {error} from 'protractor';
   styleUrls: ['./health.component.css']
 })
 export class HealthComponent implements OnInit {
+  public loading = false;
 
   lstHealth: any = [];
   students: any;
   health: any = {
-    health_desc:'test',
-    doctor_name:'test',
+    health_desc: 'test',
+    doctor_name: 'test',
     payer_name: 'test',
-    bring_nane:'test',
+    bring_nane: 'test',
     student_id: 1
   };
 
-  constructor(private http: HttpClient, private router: Router,private  tokenService:TokenService) {
+  constructor(private http: HttpClient, private router: Router, private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getHealth();
   }
 
@@ -42,9 +44,16 @@ export class HealthComponent implements OnInit {
       .subscribe((res: any) => {
           this.students = res.data;
           console.log('student', this.students);
+          setTimeout(() => {
+            this.loading = false;
+          }, 700);
 
         },
         error => {
+          setTimeout(() => {
+            this.loading = false;
+          }, 700);
+
           Swal.fire(
             'The Internet?',
             error.message,
@@ -53,8 +62,6 @@ export class HealthComponent implements OnInit {
         }
       );
   }
-
-
 
 
 }

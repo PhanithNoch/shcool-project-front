@@ -1,0 +1,44 @@
+<div class="row p-2">
+<div class="col-md-6">
+  <h3>
+    ផែនការសិស្ស
+  </h3>
+</div>
+  <div class="col-md-6 ">
+    <button [routerLink]="['/admin/plans-upsert',studentId]"  class="btn btn-sm btn-primary float-end ">Create</button>
+  </div>
+
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">ឈ្មោះ</th>
+    <th scope="col">រួមមានគ្រួសាររបស់សិស្ស</th>
+    <th scope="col">ការរំលឹកឡើងវិញ</th>
+    <th scope="col">និមិត្តរបស់សិស្ស</th>
+    <th scope="col">តម្រូវការផែនការសកម្មភាព</th>
+<!--    <th scope="col">ការរំលឹកឡើងវិញ</th>-->
+    <!--    <th scope="col">ការធ្វើសមាហរណ៍កម្មបញ្ចុនសិស្សទៅកន្លែងដើមវិញ</th>-->
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of studentPlan" >
+    <th scope="row">1</th>
+<!--    <td><a [routerLink]="['/admin/plans-upsert',student.id]" >{{currentStudent?.fullname}}</a></td>-->
+    <td>{{student?.fullname}}</td>
+    <td>{{student?.student_family}}</td>
+    <td>{{student?.student_review}}</td>
+    <td>{{student?.student_dream}}</td>
+    <td>{{student?.requirement_activity}}</td>
+<!--    <td class="truncate" >{{student?.address}}</td>-->
+    <td>
+      <button class="btn btn-danger btn-sm" >Delete</button>
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>

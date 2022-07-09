@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit {
   handleResponse(data) {
     this.token.handleToken(data);
     this.authGuard.changeAuthStatus(true);
-    this.router.navigateByUrl('/admin/post');
+    this.router.navigateByUrl('/admin/student-list');
   }
 
   back(){

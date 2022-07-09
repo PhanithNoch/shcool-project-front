@@ -12,31 +12,36 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+  public loading = false;
 
   public students: any;
   public currentStudents: any;
   public user: any;
   public studentID: any;
-  public  payment: any
+  public payment: any
     = {};
-  public  paymentHistory: any
+  public paymentHistory: any
     = {};
   angForm: FormGroup;
+
   printPage() {
     window.print();
   }
+
   constructor(private http: HttpClient, private router: Router, private userService: TokenService, private fb: FormBuilder) {
     this.createForm();
   }
 
-  createForm() {
+  createForm(): void {
     this.angForm = this.fb.group({
-      total: ['', Validators.required ],
-      amount: ['', Validators.required ],
+      total: ['', Validators.required],
+      amount: ['', Validators.required],
       note: []
     });
   }
+
   ngOnInit(): void {
+    this.loading = true;
     this.getStudentPayment();
     this.getUser();
 
@@ -51,8 +56,16 @@ export class PaymentComponent implements OnInit {
       .subscribe((res: any) => {
           this.students = res.data;
           console.log('paymentHistory', this.students);
+          setTimeout(() => {
+            this.loading = false;
+          }, 700);
+
         },
         error => {
+          setTimeout(() => {
+            this.loading = false;
+          }, 700);
+
           Swal.fire(
             'The Internet?',
             error.message,
@@ -62,11 +75,11 @@ export class PaymentComponent implements OnInit {
       );
   }
 
-  rowClick(id) {
+  rowClick(id): void {
     // this.router.navigate(['/admin/student-upsert', id]);
   }
 
-  deletePayment(id: any) {
+  deletePayment(id: any): void {
     Swal.fire({
       title: 'Are you sure?',
       text: 'You will not be able to recover this imaginary file!',
@@ -103,20 +116,36 @@ export class PaymentComponent implements OnInit {
   selectedRow(id: any, currentStudents: any): void {
     this.studentID = id;
     this.currentStudents = currentStudents;
-    console.log('currentStudents',this.currentStudents);
+    console.log('currentStudents', this.currentStudents);
     console.log('ID', this.studentID);
   }
 
+  updatePaidStatus(): void {
+    this.http
+      .put(environment.baseUrl + 'students/' + this.studentID, {
+        unpaid: false
 
-  createPayment() {
+      })
+      .subscribe((res: any) => {
+          console.log('response', res);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }
+
+  createPayment(): void {
     this.payment.user_id = this.user.id;
     this.payment.student_id = this.studentID;
-    console.log('user id',  this.user.id);
+    console.log('user id', this.user.id);
     if (this.angForm.valid) {
       console.log('payment', this.payment);
       this.http
         .post(environment.baseUrl + 'payments', this.payment)
-        .subscribe((res: any ) => {
+        .subscribe((res: any) => {
+            this.updatePaidStatus();
+            this.getStudentPayment();
             console.log('response', res);
             Swal.fire({
               position: 'top-end',
@@ -129,10 +158,8 @@ export class PaymentComponent implements OnInit {
           (error) => {
             console.log(error);
           }
-
         );
-    }
-    else{
+    } else {
       console.log('message error');
     }
   }

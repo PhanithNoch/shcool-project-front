@@ -45,6 +45,10 @@ import {NgxPrintModule} from 'ngx-print';
 import { HealthDetailsComponent } from './admin/health-details/health-details.component';
 import { GreetingsDetailsComponent } from './admin/greetings-details/greetings-details.component';
 import { BudgetDetailsComponent } from './admin/budget-details/budget-details.component';
+import { PlanDetailsComponent } from './admin/plan-details/plan-details.component';
+import {NgxLoadingModule} from 'ngx-loading';
+import { InterviewDetailsComponent } from './admin/interview-details/interview-details.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 
 @NgModule({
@@ -86,6 +90,8 @@ import { BudgetDetailsComponent } from './admin/budget-details/budget-details.co
     HealthDetailsComponent,
     GreetingsDetailsComponent,
     BudgetDetailsComponent,
+    PlanDetailsComponent,
+    InterviewDetailsComponent,
 
   ],
   imports: [
@@ -95,7 +101,10 @@ import { BudgetDetailsComponent } from './admin/budget-details/budget-details.co
     ReactiveFormsModule,
     HttpClientModule,
     FileUploadModule,
-    NgxPrintModule
+    NgxPrintModule,
+    NgxLoadingModule.forRoot({}),
+    Ng2SearchPipeModule
+
   ],
   providers: [
 

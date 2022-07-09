@@ -1,38 +1,46 @@
 <div class="container " >
-  <div class="mt-4" style="text-decoration-line: underline">
-    <h4 >ផែនការមួយទល់នឹងមួយ</h4>
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h4 >ផែនការមួយទល់នឹងមួយ</h4>
+    </div>
+<!--    <div class="col-md-6">-->
+<!--      <button [routerLink]="['/admin/plans-upsert']"  class="btn btn-sm btn-primary float-end align-middle">Create</button>-->
+<!--    </div>-->
   </div>
+
+
   <div class="row mt-3">
-    <div class="col-4">
-      <form>
-        <label >ឈ្មោះអតិថិជន</label>
-        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
-      </form>
+    <div class="col-6">
+
+      <label >ឈ្មោះអតិថិជន</label>
+      <input disabled="true" [(ngModel)]="currentStudent.fullname" name="fullname" type="text" class="form-control" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
+
     </div>
-    <div class="col-4">
-      <form>
-        <label >កាលបរិច្ឆេទ</label>
-        <input type="date" class="form-control"  aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
-      </form>
-    </div>
-    <div class="col-4">
-      <form>
+
+<!--    <div class="col-4">-->
+
+<!--&lt;!&ndash;        <label >កាលបរិច្ឆេទ</label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="date" class="form-control"  aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">&ndash;&gt;-->
+
+<!--    </div>-->
+    <div class="col-6">
+
         <label >កាលបរិច្ឆេទរំលឹកឡើងវិញ</label>
-        <input type="date" class="form-control"  aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
-      </form>
+        <input type="date" [(ngModel)]="plan.date" name="date" class="form-control"  aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
+
     </div>
   </div>
   <div class="row">
     <div class="col-6">
-      <form class="mt-2">
+
         <label class="">រួមមានគ្រួសាររបស់សិស្ស</label>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-      </form>
+        <textarea [(ngModel)]="plan.student_family" name="student_family" class="form-control" aria-label="With textarea"></textarea>
+
     </div>
     <div class="col-6">
       <form class="mt-2">
         <label class="">ការរំលឹកឡើងវិញ</label>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
+        <textarea [(ngModel)]="plan.student_review" name="review_date" class="form-control" aria-label="With textarea"></textarea>
       </form>
     </div>
   </div>
@@ -40,53 +48,53 @@
     <div class="col-6">
       <form class="mt-2">
         <label class="">និមិត្តរបស់សិស្ស</label>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
+        <textarea  [(ngModel)]="plan.student_dream" name="student_dream" class="form-control" aria-label="With textarea"></textarea>
       </form>
     </div>
-    <div class="col-6">
-      <form class="mt-2">
+    <div class="col-6 mt-2">
+
         <label class="">ការរំលឹកឡើងវិញ</label>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-      </form>
+        <textarea [(ngModel)]="plan.student_review" name="student_review" class="form-control" aria-label="With textarea"></textarea>
+
     </div>
   </div>
   <form class="mt-2">
     <label class="">តម្រូវការផែនការសកម្មភាព</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
+    <textarea  [(ngModel)]="plan.requirement_activity" name="requirement_activity"  class="form-control" aria-label="With textarea"></textarea>
   </form>
-  <div class="row">
-    <div class="col-6">
-      <form class="mt-2">
-        <label class="">ការសួរសុខទុក្ខគ្រួសារ</label>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-      </form>
-    </div>
-    <div class="col-6">
-      <form class="mt-2">
-        <label class="">ការរំលឹកឡើងវិញ</label>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <form class="mt-2">
-        <label class="">ការធ្វើសមាហរណ៍កម្មបញ្ចុនសិស្សទៅកន្លែងដើមវិញ</label>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-      </form>
-    </div>
-    <div class="col-6">
-      <form class="mt-2">
-        <label class="">ការរំលឹកឡើងវិញ</label>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-      </form>
-    </div>
-  </div>
-  <form class="mt-2">
-    <label class="">តម្រូវការផែនការសកម្មភាព</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-  </form>
+<!--  <div class="row">-->
+<!--    <div class="col-6">-->
+<!--      <form class="mt-2">-->
+<!--        <label class="">ការសួរសុខទុក្ខគ្រួសារ</label>-->
+<!--        <textarea class="form-control" aria-label="With textarea"></textarea>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--    <div class="col-6">-->
+<!--      <form class="mt-2">-->
+<!--        <label class="">ការរំលឹកឡើងវិញ</label>-->
+<!--        <textarea class="form-control" aria-label="With textarea"></textarea>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    <div class="col-6">-->
+<!--      <form class="mt-2">-->
+<!--        <label class="">ការធ្វើសមាហរណ៍កម្មបញ្ចុនសិស្សទៅកន្លែងដើមវិញ</label>-->
+<!--        <textarea class="form-control" aria-label="With textarea"></textarea>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--    <div class="col-6">-->
+<!--      <form class="mt-2">-->
+<!--        <label class="">ការរំលឹកឡើងវិញ</label>-->
+<!--        <textarea class="form-control" aria-label="With textarea"></textarea>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--    <label class="mt-2">តម្រូវការផែនការសកម្មភាព</label>-->
+<!--    <textarea class="form-control" aria-label="With textarea"></textarea>-->
+
   <div class="mt-4 text-right">
-    <button type="button" class="btn btn-primary">រក្សាទុក</button>
+    <button (click)="onSubmit()" type="button" class="btn btn-primary">រក្សាទុក</button>
   </div>
 </div>
