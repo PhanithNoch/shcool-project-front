@@ -14,25 +14,27 @@ export class HealthDetailsComponent implements OnInit {
   students: any;
   studentObj: any;
   id: string;
- health: any = {
-    health_desc:'test',
-    doctor_name:'test',
-    payer_name: 'test',
-    bring_nane:'test',
+  health: any = {
+    health_desc: null,
+    doctor_name: null,
+    payer_name: null,
+    bring_nane: null,
     student_id: 1
   };
-  constructor(private http: HttpClient, private router: Router, private  tokenService: TokenService, private  activateRoute: ActivatedRoute) {
+
+  constructor(private http: HttpClient, private router: Router, private tokenService: TokenService, private activateRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.activateRoute.params.subscribe((res => {
-      if(res.id != null){
+      if (res.id != null) {
         this.id = res.id;
         this.getHealthWhere(res.id);
       }
 
     }));
   }
+
   getHealthWhere(id: any): void {
     const token = this.tokenService.get();
     const header = new HttpHeaders().set(
@@ -56,7 +58,7 @@ export class HealthDetailsComponent implements OnInit {
       );
   }
 
-  delete(id: any): void{
+  delete(id: any): void {
     Swal.fire({
       title: 'Are you sure?',
       text: 'You will not be able to recover this imaginary file!',
@@ -89,6 +91,7 @@ export class HealthDetailsComponent implements OnInit {
       }
     });
   }
+
   onSubmit(): void {
     const token = this.tokenService.get();
     const header = new HttpHeaders().set(
@@ -96,7 +99,7 @@ export class HealthDetailsComponent implements OnInit {
       'Bearer' + token
     );
     this.health.student_id = this.id;
-    console.log('health',this.health);
+    console.log('health', this.health);
     this.http.post(environment.baseUrl + 'auth/healths', this.health, {headers: header})
       .subscribe((res: any) => {
           this.students = res.data;
@@ -117,8 +120,9 @@ export class HealthDetailsComponent implements OnInit {
         }
       );
   }
-  onEdit(health: any){
-    console.log('heath',health);
+
+  onEdit(health: any) {
+    console.log('heath', health);
     // this.health.health_desc = health.health_desc;
     // this.health.payer_name = health.payer_name;
   }

@@ -49,6 +49,10 @@ import { PlanDetailsComponent } from './admin/plan-details/plan-details.componen
 import {NgxLoadingModule} from 'ngx-loading';
 import { InterviewDetailsComponent } from './admin/interview-details/interview-details.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { AccidentComponent } from './admin/accident/accident.component';
+import { AccidentDetailsComponent } from './admin/accident-details/accident-details.component';
+import { TestimoniesComponent } from './admin/testimonies/testimonies.component';
+import { TestimoniesDetailsComponent } from './admin/testimonies-details/testimonies-details.component';
 
 
 @NgModule({
@@ -92,6 +96,10 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     BudgetDetailsComponent,
     PlanDetailsComponent,
     InterviewDetailsComponent,
+    AccidentComponent,
+    AccidentDetailsComponent,
+    TestimoniesComponent,
+    TestimoniesDetailsComponent,
 
   ],
   imports: [

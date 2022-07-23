@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
     password_confirmation: null,
     type: null
   };
-  selectedType = '';
+  selectedType = 'USER';
 
   selectChangeHandler(event: any) {
     this.selectedType = event.target.value;
@@ -41,12 +41,12 @@ export class UserComponent implements OnInit {
 
 
   ngOnInit() {
-   let user =  this.tokenService.getUserInfo();
+    let user = this.tokenService.getUserInfo();
     // tslint:disable-next-line:triple-equals
-   if(user.type != 'ADMIN'){
-     this.router.navigateByUrl('/admin/student-list');
-   }
-   console.log('user',user);
+    if (user.type != 'ADMIN') {
+      this.router.navigateByUrl('/admin/student-list');
+    }
+    console.log('user', user);
     this.getAllUsers();
   }
 
@@ -54,14 +54,26 @@ export class UserComponent implements OnInit {
     this.form.type = this.selectedType;
     console.log(this.form);
     this.auth.signup(this.form).subscribe(
-      res => this.handleResponse(res)
+      res => this.handleResponse(res),
+      error => {
+        if (error.error.errors.email) {
+          Swal.fire(
+            'Message',
+            error.error.errors.email[0],
+            'error'
+          );
+        }
+        console.log('error', error.errors);
+        console.log('error', error.error.errors.email[0]);
+      }
     );
   }
 
   handleResponse(data) {
-    this.token.handleToken(data);
-    this.authGuard.changeAuthStatus(true);
-    this.router.navigateByUrl('/admin/post');
+    // this.token.handleToken(data);
+    // this.authGuard.changeAuthStatus(true);
+
+    this.router.navigateByUrl('/admin/user');
   }
 
   back() {
@@ -92,4 +104,46 @@ export class UserComponent implements OnInit {
 
   }
 
+  deleteStudent(id: any): void {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this imaginary file!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        this.http.delete(environment.baseUrl + 'auth/users/' + id)
+          .subscribe((res: any) => {
+              console.log(res);
+              this.getAllUsers();
+              Swal.fire(
+                'Deleted!',
+                'Your imaginary file has been deleted.',
+                'success'
+              );
+            },
+            error => {
+              if (error.status === 401) {
+                Swal.fire(
+                  'Message',
+                  'Token Expired',
+                  'error'
+                );
+              }
+            }
+          );
+        // For more information about handling dismissals please visit
+        // https://sweetalert2.github.io/#handling-dismissals
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        );
+      }
+    });
+  }
 }

@@ -6,17 +6,17 @@ import {LoginComponent} from './admin/login/login.component';
 import {SignupComponent} from './admin/signup/signup.component';
 import {BeforeLoginService} from './shared/services/before-login.service';
 import {AfterLoginService} from './shared/services/after-login.service';
-import { ContactComponent } from './website/contact/contact.component';
-import { AboutComponent } from './website/about/about.component';
-import { PostComponent } from './website/post/post.component';
-import { PostAdminComponent } from './admin/post-admin/post-admin.component';
-import { UserComponent } from './admin/user/user.component';
-import { PostAdminUpsertComponent } from './admin/post-admin-upsert/post-admin-upsert.component';
-import { ProductComponent } from './product/product.component';
-import { ProductUpsertComponent } from './admin/product-upsert/product-upsert.component';
-import { StudentListComponent } from './admin/student-list/student-list.component';
-import { StudentDocumentComponent } from './admin/student-document/student-document.component';
-import { StudentUpsertComponent } from './admin/student-upsert/student-upsert.component';
+import {ContactComponent} from './website/contact/contact.component';
+import {AboutComponent} from './website/about/about.component';
+import {PostComponent} from './website/post/post.component';
+import {PostAdminComponent} from './admin/post-admin/post-admin.component';
+import {UserComponent} from './admin/user/user.component';
+import {PostAdminUpsertComponent} from './admin/post-admin-upsert/post-admin-upsert.component';
+import {ProductComponent} from './product/product.component';
+import {ProductUpsertComponent} from './admin/product-upsert/product-upsert.component';
+import {StudentListComponent} from './admin/student-list/student-list.component';
+import {StudentDocumentComponent} from './admin/student-document/student-document.component';
+import {StudentUpsertComponent} from './admin/student-upsert/student-upsert.component';
 import {PaymentComponent} from './admin/payment/payment.component';
 import {PaymentUpsertComponent} from './admin/payment-upsert/payment-upsert.component';
 import {PlanComponent} from './admin/plan/plan.component';
@@ -31,12 +31,19 @@ import {GreetingsComponent} from './admin/greetings/greetings.component';
 import {BudgetlistComponent} from './admin/budgetlist/budgetlist.component';
 import {HealthDetailsComponent} from './admin/health-details/health-details.component';
 import {GreetingsDetailsComponent} from './admin/greetings-details/greetings-details.component';
-import {BudgetDetailsComponent} from "./admin/budget-details/budget-details.component";
+import {BudgetDetailsComponent} from './admin/budget-details/budget-details.component';
 import {PlanDetailsComponent} from './admin/plan-details/plan-details.component';
 import {InterviewDetailsComponent} from './admin/interview-details/interview-details.component';
+import {AccidentComponent} from './admin/accident/accident.component';
+import {AccidentDetailsComponent} from './admin/accident-details/accident-details.component';
+import {TestimoniesComponent} from './admin/testimonies/testimonies.component';
+import {TestimoniesDetailsComponent} from './admin/testimonies-details/testimonies-details.component';
 
 const routes: Routes = [
-  {path: '', component: WebsiteHomeComponent},
+  // {path: '', component: WebsiteHomeComponent},
+  {
+    path: '', redirectTo: '/admin/student-list', pathMatch: 'full'
+  },
   {path: 'post', component: PostComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},
@@ -59,83 +66,97 @@ const routes: Routes = [
         path: 'post', component: PostAdminComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'user', component: UserComponent,
+        path: 'user', component: UserComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'upsert', component: PostAdminUpsertComponent,
+        path: 'upsert', component: PostAdminUpsertComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'upsert/:id', component: PostAdminUpsertComponent,
-      },
-  {
-        path: 'student-list', component: StudentListComponent,
+        path: 'upsert/:id', component: PostAdminUpsertComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'student-upsert', component: StudentUpsertComponent,
+        path: 'student-list', component: StudentListComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'student-upsert/:id', component: StudentUpsertComponent,
+        path: 'student-upsert', component: StudentUpsertComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'student-document', component: StudentDocumentComponent,
+        path: 'student-upsert/:id', component: StudentUpsertComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'payments', component: PaymentComponent,
+        path: 'student-document', component: StudentDocumentComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'payments-upsert/:id', component: PaymentUpsertComponent,
+        path: 'payments', component: PaymentComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'plans', component: PlanComponent,
+        path: 'payments-upsert/:id', component: PaymentUpsertComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'plans-details/:id', component: PlanDetailsComponent,
+        path: 'plans', component: PlanComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'plans-upsert/:id', component: PlanUpsertComponent
+        path: 'plans-details/:id', component: PlanDetailsComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'plans-upsert/:id', component: PlanUpsertComponent, canActivate: [AfterLoginService],
       },
 
       {
-        path: 'administration', component: AdministrationComponent
+        path: 'administration', component: AdministrationComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'administration/:id', component: AdministrationUpsertComponent
-      },
-
-      {
-        path: 'interview', component: InterviewComponent
-      },
-      {
-        path: 'interview-upsert', component: InterviewUpsertComponent
-      },
-      {
-        path: 'interview-upsert/:id', component: InterviewUpsertComponent
-      },
-      {
-        path: 'interview-details/:id', component: InterviewDetailsComponent
-      },
-      {
-        path: 'health', component: HealthComponent
-      },
-      {
-        path: 'health-details/:id', component: HealthDetailsComponent
-      },
-      {
-        path: 'health-upsert/:id', component: HealthUpsertComponent
+        path: 'administration/:id', component: AdministrationUpsertComponent, canActivate: [AfterLoginService],
       },
 
       {
-        path: 'greetings', component: GreetingsComponent
+        path: 'interview', component: InterviewComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'greetings-details/:id', component: GreetingsDetailsComponent
+        path: 'interview-upsert', component: InterviewUpsertComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'interview-upsert/:id', component: InterviewUpsertComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'interview-details/:id', component: InterviewDetailsComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'health', component: HealthComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'health-details/:id', component: HealthDetailsComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'health-upsert/:id', component: HealthUpsertComponent, canActivate: [AfterLoginService],
       },
 
       {
-        path: 'budgetlist', component: BudgetlistComponent
+        path: 'greetings', component: GreetingsComponent, canActivate: [AfterLoginService],
       },
       {
-        path: 'budget-details/:id', component: BudgetDetailsComponent
+        path: 'greetings-details/:id', component: GreetingsDetailsComponent, canActivate: [AfterLoginService],
+      },
+
+      {
+        path: 'budgetlist', component: BudgetlistComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'budget-details/:id', component: BudgetDetailsComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'accidents', component: AccidentComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'accidents-details/:id', component: AccidentDetailsComponent, canActivate: [AfterLoginService],
+      },
+
+
+      {
+        path: 'testimonies', component: TestimoniesComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'testimonies-details/:id', component: TestimoniesDetailsComponent, canActivate: [AfterLoginService],
       },
       // {
       //   path: 'product', component: ProductComponent,

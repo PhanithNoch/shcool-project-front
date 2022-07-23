@@ -18,24 +18,44 @@ export class StudentUpsertComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.student.sex = 'ប្រុស';
     this.activateRoute.params.subscribe((res => {
       if (res.id != null) {
         this.getStudent(res.id);
       }
 
     }));
-    console.log('activateRoute',);
   }
 
-  onSubmit(f: NgForm) {
-    console.log('student,', f.value.sex);
-    console.log('criminals_with,', f.value.criminals_with);
-    console.log(f.value.fullname);  // { first: '', last: '' }
-    console.log(f.valid);  // false
-    this.http.post(environment.baseUrl + 'students', f.value).subscribe({
-      next: (response) => console.log(response),
-      error: (error) => console.log(error),
-    });
+  onSubmit(f: NgForm) :void {
+    console.log('student,', this.student);
+    // return;
+    // console.log('sex', this.student.sex);
+    // // return;
+    // console.log('criminals_with,', f.value.criminals_with);
+    // console.log(f.value.fullname);  // { first: '', last: '' }
+    // console.log(f.valid);  // false
+    this.http.post(environment.baseUrl + 'students', this.student).subscribe(
+      {
+        complete(): void {
+          Swal.fire(
+            'Message',
+            'ការបង្កើតទទួលបានជោគជ័យ',
+            'success'
+          );
+        },
+
+        next: (response) => console.log(response),
+        error: (error) => {
+          console.log( error.error[0]);
+          Swal.fire(
+            'Message',
+            error.error[0][0].toString,
+            'error'
+          );
+          console.log(error);
+        }
+      });
   }
 
   chooseSex(e) {
@@ -47,8 +67,6 @@ export class StudentUpsertComponent implements OnInit {
       .subscribe((res: any) => {
           console.log(res);
           this.student = res.data;
-
-
         },
         error => {
           Swal.fire(

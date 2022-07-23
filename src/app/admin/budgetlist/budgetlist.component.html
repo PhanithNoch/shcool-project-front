@@ -17,7 +17,7 @@
     <h3>បញ្ជីឈ្មោះសិស្ស</h3>
   </div>
   <div class="col-md-6">
-    <button [routerLink]="['/admin/student-upsert']"  class="btn btn-sm btn-primary float-end align-middle">Create</button>
+<!--    <button [routerLink]="['/admin/student-upsert']"  class="btn btn-sm btn-primary float-end align-middle">Create</button>-->
   </div>
 </div>
 
@@ -35,8 +35,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let student of students" >
-    <th scope="row">1</th>
+  <tr *ngFor="let student of students; let i = index" >
+    <th scope="row">{{i+1}}</th>
     <td><a [routerLink]="['/admin/budget-details',student.id]" >{{student?.fullname}}</a></td>
     <td>{{student?.sex}}</td>
     <td>{{student?.dob}}</td>

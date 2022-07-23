@@ -8,20 +8,20 @@
       </div>
       <div class="col-md-6  ">
         <button type="submit" class="btn btn-primary  float-end pt-2">Save</button>
-  
+
       </div>
     </div>
-  
+
   </div>
   <div class="row">
     <div class="col-6">
 
         <label for="exampleInputEmail1">គោត្តនាម​-​នាមសិស្ស</label>
         <input name="fullname" [(ngModel)]="student.fullname" required #fullname="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="គោត្តនាម​-​នាមសិស្ស">
-    
+
     </div>
     <div class="col-6">
- 
+
         <label for="exampleInputEmail1">ឈ្មោះហៅក្រៅ</label>
         <input name="nickname" ngModel [(ngModel)]="student.nickname"   #nickname="ngModel"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះហៅក្រៅ">
 
@@ -32,21 +32,21 @@
 
       <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
       <input name="address" ngModel  #address="ngModel" [(ngModel)]="student.address"    type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
-  
+
   </div>
   <div class="col-6">
 
       <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
       <input name="phone" ngModel  #phone="ngModel" [(ngModel)]="student.phone"    type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
-  
+
   </div>
  </div>
  <div class="row">
   <div class="col-3">
- 
+
       <label for="exampleInputEmail1">ទំងន់</label>
       <input  name="weight" ngModel  #weight="ngModel" [(ngModel)]="student.weight" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំងន់">
-   
+
   </div>
   <div class="col-3">
 
@@ -55,16 +55,16 @@
 
   </div>
   <div class="col-3">
- 
+
       <label for="exampleInputEmail1">ថ្ងៃខែឆ្នាំកំណើត</label>
       <input  name="dob" ngModel  #dob="ngModel" [(ngModel)]="student.dob"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ថ្ងៃខែឆ្នាំកំណើត">
- 
+
   </div>
   <div class="col-3">
-   
+
       <label for="exampleInputEmail1">អាយុ</label>
       <input name="age" ngModel  #age="ngModel" [(ngModel)]="student.age"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាយុ">
-   
+
   </div>
  </div>
  <div class="row">
@@ -77,7 +77,7 @@
       <label class="form-check-label" for="inlineRadio1">ស្រី</label>
     </div>
     <div class="form-check form-check-inline">
-      <input   class="form-check-input" type="radio" name="sex"  [(ngModel)]="student.sex"  id="male"  ngModel required >
+      <input   class="form-check-input" type="radio" name="sex"  [(ngModel)]="student.sex"  id="male"  value="ប្រុស"  ngModel required >
       <label class="form-check-label" for="inlineRadio2">ប្រុស</label>
     </div>
    </div>
@@ -87,44 +87,44 @@
 
       <label for="exampleInputEmail1">ទីកន្លែងកំណើត</label>
       <input name="place_of_birth" ngModel  #place_of_birth="ngModel"  [(ngModel)]="student.place_of_birth"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទីកន្លែងកំណើត">
-   
+
   </div>
   <div class="col-3">
-  
+
       <label for="exampleInputEmail1">លេខអត្តសញ្ញណបណ្ណ័</label>
       <input name="id_number" ngModel  #id_number="ngModel" [(ngModel)]="student.id_number"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខអត្តសញ្ញណបណ្ណ័">
   </div>
   <div class="col-3">
- 
+
       <label for="exampleInputEmail1">កាលបរិច្ឆេទផុតកំណត់</label>
       <input name="expired_date" ngModel  #expired_date="ngModel"  [(ngModel)]="student.expired_date"    type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទផុតកំណត់">
-  
+
   </div>
  </div>
  <div class="row">
   <div class="col-6">
-  
+
       <label for="exampleInputEmail1">ឪពុកឈ្មោះ</label>
       <input name="father_name" ngModel  #father_name="ngModel" [(ngModel)]="student.father_name"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឪពុកឈ្មោះ">
- 
+
   </div>
     <div class="col-2">
-   
+
         <label for="exampleInputEmail1">ត្រកូល</label>
         <input name="father_firstname" ngModel  #father_firstname="ngModel" [(ngModel)]="student.father_firstname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ត្រកូល">
-  
+
     </div>
     <div class="col-2">
-   
+
         <label for="exampleInputEmail1">អាយុ</label>
         <input name="father_age" ngModel  #father_age="ngModel" [(ngModel)]="student.father_age"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាយុ">
-   
+
     </div>
     <div class="col-2">
-     
+
         <label for="exampleInputEmail1">មុខរបរ</label>
         <input name="father_job" ngModel  #father_job="ngModel" [(ngModel)]="student.father_job"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="មុខរបរ">
-    
+
     </div>
  </div>
  <div class="row">
@@ -135,22 +135,22 @@
 
   </div>
     <div class="col-2">
-    
+
         <label for="exampleInputEmail1">ត្រកូល</label>
         <input  name="mother_firstname" ngModel   #mother_firstname="ngModel" [(ngModel)]="student.mother_firstname"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ត្រកូល">
-      
+
     </div>
     <div class="col-2">
-    
+
         <label for="exampleInputEmail1">អាយុ</label>
         <input name="mother_age" ngModel  #mother_age="ngModel"  [(ngModel)]="student.mother_age"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាយុ">
-     
+
     </div>
     <div class="col-2">
- 
+
         <label for="exampleInputEmail1">មុខរបរ</label>
         <input name="mother_job" ngModel  #mother_job="ngModel" [(ngModel)]="student.mother_job"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="មុខរបរ">
-   
+
     </div>
  </div>
 
@@ -159,40 +159,40 @@
 
  <div class="row">
   <div class="col-6">
- 
+
       <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
       <input name="parent_address" ngModel  #parent_address="ngModel" [(ngModel)]="student.parent_address"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
-  
+
   </div>
     <div class="col-3">
- 
+
         <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
         <input name="parent_contact_phone" ngModel  #parent_contact_phone="ngModel" [(ngModel)]="student.parent_contact_phone"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
-     
-    </div> 
+
+    </div>
     <div class="col-3">
- 
+
         <label for="exampleInputEmail1">ទំនាក់ទំនងត្រូវជា</label>
         <input name="relatives_contact" ngModel  #relatives_contact="ngModel"  [(ngModel)]="student.relatives_contact"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំនាក់ទំនងត្រូវជា">
- 
+
     </div>
     <div class="col-6">
- 
+
         <label for="exampleInputEmail1">ចំពោះករណីបន្ទាន់</label>
         <input name="emergency" ngModel  #emergency="ngModel" [(ngModel)]="student.emergency"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ចំពោះករណីបន្ទាន់">
-  
+
     </div>
     <div class="col-6">
-   
+
         <label for="exampleInputEmail1">លេខទូរសព្ទ័ទំនាក់ទំនង</label>
         <input name="emergency_contact" ngModel  #emergency_contact="ngModel" [(ngModel)]="student.emergency_contact" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័ទំនាក់ទំនង">
 
     </div>
     <div class="col-6">
-   
+
         <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
         <input name="emergency_address" ngModel  #emergency_address="ngModel" [(ngModel)]="student.emergency_address"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
-  
+
     <div class="col-6">
 
         <label for="exampleInputEmail1">ទំនាក់ទំនងត្រូវជា</label>
@@ -200,14 +200,14 @@
 
     </div>
     ១. អ្នកដែលបញ្ចូល ឬណែនាំមកអង្គការធីន ឆាឡេន
-    
+
  </div>
  <div class="row">
   <div class="col-6">
- 
+
       <label for="exampleInputEmail1">ឈ្មោះ</label>
       <input  name="suggester_name" ngModel  #suggester_name="ngModel" [(ngModel)]="student.suggester_name"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះ">
- 
+
   </div>
   <div class="col-2">
 
@@ -216,30 +216,30 @@
 
   </div>
   <div class="col-4">
- 
+
       <label for="exampleInputEmail1">ឈ្មោះហៅក្រៅ</label>
       <input name="suggester_nickname" ngModel  #suggester_nickname="ngModel" [(ngModel)]="student.suggester_nickname"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ឈ្មោះហៅក្រៅ">
- 
+
   </div>
 </div>
 <div class="row">
   <div class="col-6">
- 
+
       <label for="exampleInputEmail1">អាសយ័ដ្ឋាន</label>
-      <input name="suggester_address" ngModel  #suggester_address="ngModel"  [(ngModel)]="student.suggester_address"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
-  
+      <input name="suggester_address"  [(ngModel)]="student.suggester_address"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="អាសយ័ដ្ឋាន">
+
   </div>
   <div class="col-3">
- 
+
       <label for="exampleInputEmail1">លេខទូរសព្ទ័</label>
       <input  name="suggester_phone_number" ngModel  #suggester_phone_number="ngModel" [(ngModel)]="student.suggester_phone_number"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="លេខទូរសព្ទ័">
-  
+
   </div>
   <div class="col-3">
 
       <label for="exampleInputEmail1">ទំនាក់ទំនងត្រូវជា</label>
       <input name="suggester_phone_relatives" ngModel  #suggester_phone_relatives="ngModel" [(ngModel)]="student.suggester_phone_relatives"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ទំនាក់ទំនងត្រូវជា">
- 
+
   </div>
 </div>
 <div class="mt-4" style="text-decoration-line: underline">
@@ -278,20 +278,20 @@
 </div>
 <div class="row">
   <div class="col-6">
- 
+
       <label for="exampleInputEmail1">កាលបរិច្ឆេទ</label>
       <input name="criminals_date" ngModel  #criminals_date="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="កាលបរិច្ឆេទ">
 
   </div>
   <div class="col-6">
- 
+
       <label for="exampleInputEmail1">ស្ថាបន័</label>
       <input name="institution_criminals" ngModel  #institution_criminals="ngModel"   type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ស្ថាបន័">
 
   </div>
 </div>
 <div class="mt-4" style="text-decoration-line: underline">
-  ស្ថានភាពសេដ្ឋកិច្ច 
+  ស្ថានភាពសេដ្ឋកិច្ច
 </div>
 <div class="mt-2">
   <p>ប្រសិនបើអ្នកចូលរួមក្នុងកម្មវិធីរបស់ ធីន​ ឆាឡេន តើអ្នកណាឧបត្ថម្ភអ្វីចំពោះការចំណាយខាងក្រោមនេះ?</p>
@@ -355,7 +355,7 @@
 
         <label for="exampleInputEmail1">សកលវិទ្យាលយ័</label>
         <input name="education_level" ngModel  #education_level="ngModel" [(ngModel)]="student.education_level"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="សកលវិទ្យាលយ័">
-  
+
     </div>
 </div>
 <div class="mt-2">
@@ -483,7 +483,7 @@
 <textarea name="desc_course_skill" ngModel  #desc_course_skill="ngModel" [(ngModel)]="student.desc_course_skill"  class="form-control" aria-label="With textarea"></textarea>
 
 <div class="mt-4" style="text-decoration-line: underline">
-  ប្រវត្តិនៃការងារ 
+  ប្រវត្តិនៃការងារ
 </div>
 
 <label class="">តើអ្នកមានវិជ្ជាជីវះអ្វីខ្លះ?</label>

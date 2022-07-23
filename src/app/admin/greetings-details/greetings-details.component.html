@@ -24,8 +24,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let visitor of visit">
-    <th scope="row">1</th>
+  <tr *ngFor="let visitor of visit; let i = index">
+    <th scope="row">{{i+1}}</th>
     <td>{{visitor.updated_at | date}}</td>
     <td>{{visitor.visitor_name}}</td>
     <td>{{visitor.phone}}</td>

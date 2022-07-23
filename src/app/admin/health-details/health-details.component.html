@@ -1,5 +1,5 @@
 {{health.payer_name}}
-<div class="row bg-info p-2 rounded ">
+<div class="row p-2 rounded ">
   <div class="col-md-6">
     <h3>របាយការណ៍សុខភាព</h3>
   </div>
@@ -19,8 +19,8 @@
     <th scope="col">ពេទ្យណា</th>
     <th scope="col">អ្នកជូនទៅ</th>
     <th scope="col">អ្នកចំណាយ</th>
-    <th scope="col">ផ្សេងៗ</th>
     <th scope="col">កាលបរិច្ឆេទ</th>
+    <th scope="col">Actions</th>
 
   </tr>
   </thead>
@@ -31,7 +31,7 @@
     <td>{{student?.health_desc}}</td>
     <td>{{student?.doctor_name}}</td>
     <td>{{student?.payer_name}}</td>
-    <td>{{student?.bring_nane}}</td>
+    <td>{{student.bring_nane}}</td>
     <td>{{student?.updated_at | date }}</td>
     <td class="">
       <button type="button" (click)="onEdit(student)" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop">កែប្រែ</button>
@@ -43,13 +43,13 @@
   </tbody>
 </table>
 <!--modal -->
-<form #health = "ngForm" (ngSubmit)="onSubmit()">
+<form #form = "ngForm" (ngSubmit)="onSubmit()">
   <!-- Modal -->
   <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">បង្កើតថ្មី</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -60,11 +60,11 @@
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">ឈ្មោះសិស្ស</label>
-            <input [(ngModel)]="health.student_name" ngModel #student_name="ngModel" name="student_name" type="value" class="form-control" >
+            <input [(ngModel)]="health.student_name" ngModel  name="student_name" type="value" class="form-control" >
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">ការពីពណ៍នាជម្ងឺ</label>
-            <textarea class="form-control" ></textarea>
+            <textarea class="form-control"  [(ngModel)]="health.health_desc" name="health_desc"></textarea>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">ពេទ្យណា</label>
@@ -74,7 +74,7 @@
             <div class="col-6">
               <div class="form-group">
                 <label for="recipient-2" class="col-form-label">អ្នកជូនទៅ</label>
-                <input [(ngModel)]="health.bring_nane" name="bring_nane"  type="value" class="form-control" >
+                <input [(ngModel)]="health.bring_nane" name="bring_nane"   class="form-control" >
               </div>
             </div>
             <div class="col-6">

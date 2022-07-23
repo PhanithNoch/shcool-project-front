@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./budget-details.component.css']
 })
 export class BudgetDetailsComponent implements OnInit {
-
+  public  isInputIncome = false;
   public budgets: any;
   public budget: any = {
     income: null,
