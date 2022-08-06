@@ -20,6 +20,18 @@
 <!--    <button [routerLink]="['/admin/student-upsert']"  class="btn btn-sm btn-primary float-end align-middle">Create</button>-->
   </div>
 </div>
+<div class="row">
+  <div class="col-md-3">
+    <div class="search">
+      <input class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2"
+             type="text"
+             [(ngModel)]="term"
+
+             placeholder="Search"
+      />
+    </div>
+  </div>
+</div>
 
 <table class="table table-bordered">
   <thead>
@@ -35,7 +47,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let student of students; let i = index" >
+  <tr *ngFor="let student of students | filter: term; let i = index" >
     <th scope="row">{{i+1}}</th>
     <td><a [routerLink]="['/admin/budget-details',student.id]" >{{student?.fullname}}</a></td>
     <td>{{student?.sex}}</td>

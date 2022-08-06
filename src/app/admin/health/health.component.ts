@@ -16,6 +16,8 @@ export class HealthComponent implements OnInit {
 
   lstHealth: any = [];
   students: any;
+  searchTerm = '';
+  term = '';
   health: any = {
     health_desc: 'test',
     doctor_name: 'test',

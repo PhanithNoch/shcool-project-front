@@ -1,1 +1,38 @@
-<p>testimonies-details works!</p>
+<div class="row p-2 rounded ">
+  <div class="col-md-6">
+    <h3>ទីបន្ទាល់</h3>
+  </div>
+  <div class="col-md-6">
+    <button [routerLink]="['/admin/testimonies-upsert',studentObj.id]" class="btn btn-sm btn-primary float-end align-middle">Create
+    </button>
+  </div>
+</div>
+
+<div class="mt-2"></div>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">ល.រ</th>
+
+    <th scope="col">ឈ្មោះសិស្ស</th>
+
+    <th scope="col">កាលបរិច្ឆេទ</th>
+<!--    <th scope="col">Actions</th>-->
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of testimonies;let i = index">
+    <th scope="row">{{i+1}}</th>
+    <td><a [routerLink]="['/admin/testimonies-view',student.id]">{{studentObj.fullname}}</a></td>
+    <td>{{student?.updated_at | date }}</td>
+<!--    <td class="">-->
+<!--      <button type="button" (click)="onEdit(student)" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop">កែប្រែ</button>-->
+<!--      <button (click)="delete(student.id)" type="button" class="btn btn-danger ml-2">លុប</button>-->
+<!--    </td>-->
+
+  </tr>
+
+  </tbody>
+</table>
+<!--modal -->

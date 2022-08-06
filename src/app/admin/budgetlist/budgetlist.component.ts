@@ -12,6 +12,8 @@ import {TokenService} from '../../shared/services/token.service';
 })
 export class BudgetlistComponent implements OnInit {
   public loading = false;
+  searchTerm = '';
+  term = '';
 
   public students: any;
 

@@ -15,44 +15,49 @@ import {LoginComponent} from './admin/login/login.component';
 import {SignupComponent} from './admin/signup/signup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import { ContactComponent } from './website/contact/contact.component';
-import { AboutComponent } from './website/about/about.component';
-import { PostComponent } from './website/post/post.component';
-import { PostAdminComponent } from './admin/post-admin/post-admin.component';
-import { PostAdminUpsertComponent } from './admin/post-admin-upsert/post-admin-upsert.component';
-import { ProductComponent } from './product/product.component';
-import { ProductUpsertComponent } from './admin/product-upsert/product-upsert.component';
-import { FileUploadModule } from 'ng2-file-upload';
-import { AfterLoginService } from './shared/services/after-login.service';
-import { TokenService } from './shared/services/token.service';
-import { StudentListComponent } from './admin/student-list/student-list.component';
-import { StudentDocumentComponent } from './admin/student-document/student-document.component';
-import { PaymentComponent } from './admin/payment/payment.component';
-import { HealthComponent } from './admin/health/health.component';
-import { AdministrationComponent } from './admin/administration/administration.component';
-import { PlanComponent } from './admin/plan/plan.component';
-import { InterviewComponent } from './admin/interview/interview.component';
-import { PaymentUpsertComponent } from './admin/payment-upsert/payment-upsert.component';
-import { PlanUpsertComponent } from './admin/plan-upsert/plan-upsert.component';
-import { AdministrationUpsertComponent } from './admin/administration-upsert/administration-upsert.component';
-import { InterviewUpsertComponent } from './admin/interview-upsert/interview-upsert.component';
-import { BudgetlistComponent } from './admin/budgetlist/budgetlist.component';
+import {ContactComponent} from './website/contact/contact.component';
+import {AboutComponent} from './website/about/about.component';
+import {PostComponent} from './website/post/post.component';
+import {PostAdminComponent} from './admin/post-admin/post-admin.component';
+import {PostAdminUpsertComponent} from './admin/post-admin-upsert/post-admin-upsert.component';
+import {ProductComponent} from './product/product.component';
+import {ProductUpsertComponent} from './admin/product-upsert/product-upsert.component';
+import {FileUploadModule} from 'ng2-file-upload';
+import {AfterLoginService} from './shared/services/after-login.service';
+import {TokenService} from './shared/services/token.service';
+import {StudentListComponent} from './admin/student-list/student-list.component';
+import {StudentDocumentComponent} from './admin/student-document/student-document.component';
+import {PaymentComponent} from './admin/payment/payment.component';
+import {HealthComponent} from './admin/health/health.component';
+import {AdministrationComponent} from './admin/administration/administration.component';
+import {PlanComponent} from './admin/plan/plan.component';
+import {InterviewComponent} from './admin/interview/interview.component';
+import {PaymentUpsertComponent} from './admin/payment-upsert/payment-upsert.component';
+import {PlanUpsertComponent} from './admin/plan-upsert/plan-upsert.component';
+import {AdministrationUpsertComponent} from './admin/administration-upsert/administration-upsert.component';
+import {InterviewUpsertComponent} from './admin/interview-upsert/interview-upsert.component';
+import {BudgetlistComponent} from './admin/budgetlist/budgetlist.component';
 import {StudentUpsertComponent} from './admin/student-upsert/student-upsert.component';
 import {GreetingsComponent} from './admin/greetings/greetings.component';
 import {HealthUpsertComponent} from './admin/health-upsert/health-upsert.component';
-import { PrintReceiptComponent } from './admin/print-receipt/print-receipt.component';
+import {PrintReceiptComponent} from './admin/print-receipt/print-receipt.component';
 import {NgxPrintModule} from 'ngx-print';
-import { HealthDetailsComponent } from './admin/health-details/health-details.component';
-import { GreetingsDetailsComponent } from './admin/greetings-details/greetings-details.component';
-import { BudgetDetailsComponent } from './admin/budget-details/budget-details.component';
-import { PlanDetailsComponent } from './admin/plan-details/plan-details.component';
+import {HealthDetailsComponent} from './admin/health-details/health-details.component';
+import {GreetingsDetailsComponent} from './admin/greetings-details/greetings-details.component';
+import {BudgetDetailsComponent} from './admin/budget-details/budget-details.component';
+import {PlanDetailsComponent} from './admin/plan-details/plan-details.component';
 import {NgxLoadingModule} from 'ngx-loading';
-import { InterviewDetailsComponent } from './admin/interview-details/interview-details.component';
+import {InterviewDetailsComponent} from './admin/interview-details/interview-details.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
-import { AccidentComponent } from './admin/accident/accident.component';
-import { AccidentDetailsComponent } from './admin/accident-details/accident-details.component';
-import { TestimoniesComponent } from './admin/testimonies/testimonies.component';
-import { TestimoniesDetailsComponent } from './admin/testimonies-details/testimonies-details.component';
+import {AccidentComponent} from './admin/accident/accident.component';
+import {AccidentDetailsComponent} from './admin/accident-details/accident-details.component';
+import {TestimoniesComponent} from './admin/testimonies/testimonies.component';
+import {TestimoniesDetailsComponent} from './admin/testimonies-details/testimonies-details.component';
+import {QuillModule} from 'ngx-quill';
+import {AccidentsUpsertComponent} from './admin/accidents-upsert/accidents-upsert.component';
+import {TestimoniesUpsertComponent} from './admin/testimonies-upsert/testimonies-upsert.component';
+import { AccidentViewComponent } from './admin/accident-view/accident-view.component';
+import { TestimonyViewComponent } from './admin/testimony-view/testimony-view.component';
 
 
 @NgModule({
@@ -100,6 +105,10 @@ import { TestimoniesDetailsComponent } from './admin/testimonies-details/testimo
     AccidentDetailsComponent,
     TestimoniesComponent,
     TestimoniesDetailsComponent,
+    TestimoniesUpsertComponent,
+    AccidentsUpsertComponent,
+    AccidentViewComponent,
+    TestimonyViewComponent,
 
   ],
   imports: [
@@ -111,13 +120,11 @@ import { TestimoniesDetailsComponent } from './admin/testimonies-details/testimo
     FileUploadModule,
     NgxPrintModule,
     NgxLoadingModule.forRoot({}),
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    QuillModule.forRoot({})
 
   ],
-  providers: [
-
-
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

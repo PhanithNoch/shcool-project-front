@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
 export class GreetingsComponent implements OnInit {
   students: any;
   public loading = false;
-
+  searchTerm = '';
+  term = '';
   constructor(private http: HttpClient, private router: Router, private  tokenService: TokenService) {
   }
 

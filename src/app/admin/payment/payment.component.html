@@ -20,7 +20,19 @@
 <!--    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-sm btn-primary float-end align-middle">Create</button>-->
   </div>
 </div>
+<div class="row">
+  <div class="col-md-3">
+    <div class="search">
+      <input class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2"
+             type="text"
+             [(ngModel)]="term"
 
+             placeholder="Search"
+      />
+    </div>
+
+  </div>
+</div>
 <table  class="table payment-table">
   <thead>
   <tr>
@@ -34,7 +46,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let student of students; let i = index" (click)="rowClick(student.id)">
+  <tr *ngFor="let student of students | filter: term; let i = index"  (click)="rowClick(student.id)">
     <th scope="row">{{i + 1}}</th>
     <td>{{student.fullname}}</td>
     <td>{{student.dob}}</td>
@@ -57,7 +69,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <form [formGroup]="angForm" (ngSubmit)="createPayment()" novalidate>
+  <form [formGroup]="angForm" novalidate>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -192,7 +204,7 @@
        </tr>
        </thead>
        <tbody>
-       <tr *ngFor="let payment of currentStudents?.payment.payment_history; let i  = index">
+       <tr *ngFor="let payment of currentStudents?.payment?.payment_history ; let i  = index">
          <th scope="row">{{i+1}}</th>
          <td>{{currentStudents?.fullname}}</td>
          <td>{{payment?.amount}}</td>

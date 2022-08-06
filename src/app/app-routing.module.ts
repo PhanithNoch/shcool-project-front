@@ -38,6 +38,10 @@ import {AccidentComponent} from './admin/accident/accident.component';
 import {AccidentDetailsComponent} from './admin/accident-details/accident-details.component';
 import {TestimoniesComponent} from './admin/testimonies/testimonies.component';
 import {TestimoniesDetailsComponent} from './admin/testimonies-details/testimonies-details.component';
+import {AccidentsUpsertComponent} from './admin/accidents-upsert/accidents-upsert.component';
+import {TestimoniesUpsertComponent} from './admin/testimonies-upsert/testimonies-upsert.component';
+import {TestimonyViewComponent} from './admin/testimony-view/testimony-view.component';
+import {AccidentViewComponent} from './admin/accident-view/accident-view.component';
 
 const routes: Routes = [
   // {path: '', component: WebsiteHomeComponent},
@@ -150,6 +154,12 @@ const routes: Routes = [
       {
         path: 'accidents-details/:id', component: AccidentDetailsComponent, canActivate: [AfterLoginService],
       },
+      {
+        path: 'accidents-upsert/:id', component: AccidentsUpsertComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'accidents-view/:id', component: AccidentViewComponent, canActivate: [AfterLoginService],
+      },
 
 
       {
@@ -157,6 +167,13 @@ const routes: Routes = [
       },
       {
         path: 'testimonies-details/:id', component: TestimoniesDetailsComponent, canActivate: [AfterLoginService],
+      },
+
+      {
+        path: 'testimonies-upsert/:id', component: TestimoniesUpsertComponent, canActivate: [AfterLoginService],
+      },
+      {
+        path: 'testimonies-view/:id', component: TestimonyViewComponent, canActivate: [AfterLoginService],
       },
       // {
       //   path: 'product', component: ProductComponent,

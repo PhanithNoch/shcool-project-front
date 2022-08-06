@@ -4,6 +4,7 @@ import {NgForm} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {environment} from 'src/environments/environment';
 import Swal from 'sweetalert2';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-student-upsert',
@@ -14,7 +15,7 @@ export class StudentUpsertComponent implements OnInit {
   form: NgForm;
   public student: any = {};
 
-  constructor(private http: HttpClient, private activateRoute: ActivatedRoute) {
+  constructor(private http: HttpClient, private activateRoute: ActivatedRoute, private _location: Location) {
   }
 
   ngOnInit(): void {
@@ -27,7 +28,11 @@ export class StudentUpsertComponent implements OnInit {
     }));
   }
 
-  onSubmit(f: NgForm) :void {
+  backClicked():void {
+    this._location.back();
+  }
+
+  onSubmit(f: NgForm): void {
     console.log('student,', this.student);
     // return;
     // console.log('sex', this.student.sex);
@@ -43,11 +48,12 @@ export class StudentUpsertComponent implements OnInit {
             'ការបង្កើតទទួលបានជោគជ័យ',
             'success'
           );
+          this.backClicked();
         },
 
         next: (response) => console.log(response),
         error: (error) => {
-          console.log( error.error[0]);
+          console.log(error.error[0]);
           Swal.fire(
             'Message',
             error.error[0][0].toString,

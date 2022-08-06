@@ -29,7 +29,18 @@
 
   </div>
 </div>
+<div class="row">
+  <div class="col-md-3">
+    <div class="search">
+      <input class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2"
+             type="text"
+             [(ngModel)]="term"
 
+             placeholder="Search"
+      />
+    </div>
+  </div>
+</div>
 <table class="table">
   <thead>
   <tr>
@@ -46,7 +57,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let student of students; let i = index" >
+  <tr *ngFor="let student of students| filter: term; let i = index" >
     <th scope="row">{{i + 1}}</th>
     <td><a [routerLink]="['/admin/interview-details',student.id]" >{{student?.customer_name}}</a></td>
     <td>{{student?.holder_name}}</td>

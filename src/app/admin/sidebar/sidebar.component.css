@@ -77,10 +77,11 @@ a{
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+
 aside
 {
     position: fixed;
-
+     overflow: auto;
     height: 100%;
     top: 0;
     left: 0;

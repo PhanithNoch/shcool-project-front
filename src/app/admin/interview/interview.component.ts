@@ -10,7 +10,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./interview.component.css']
 })
 export class InterviewComponent implements OnInit {
-
+  searchTerm = '';
+  term = '';
   public students: any;
   typeSelected: string;
   public loading = false;

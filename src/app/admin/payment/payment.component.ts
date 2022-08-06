@@ -13,7 +13,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class PaymentComponent implements OnInit {
   public loading = false;
-
+  searchTerm = '';
+  term = '';
   public students: any;
   public currentStudents: any;
   public user: any;
@@ -136,6 +137,8 @@ export class PaymentComponent implements OnInit {
   }
 
   createPayment(): void {
+    console.log('student id ',this.studentID);
+
     this.payment.user_id = this.user.id;
     this.payment.student_id = this.studentID;
     console.log('user id', this.user.id);
